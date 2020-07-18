@@ -1,50 +1,78 @@
-<template>
-   <nav>
-      <v-app-bar flat app absolute="" color="white">
-        <v-app-bar-nav-icon @click="drawer =!drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title class="text-uppercase white--text">
-            <span class="green--text font-weight-light" style="font-family : 'MapoPeacefull';">Fit</span>
-            <span class="green--text" style="font-family : 'MapoPeacefull';">Food</span>
-        </v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-toolbar-items>
-          <v-btn v-if="this.user_email" text class="green--text" @click.prevent="signOut" style="font-family : 'MapoPeacefull';">Logout</v-btn>
-          <v-btn v-else text to="/login" class="green--text" style="font-family : 'MapoPeacefull';">Login</v-btn>
-        </v-toolbar-items>  
-      </v-app-bar>
-      <v-navigation-drawer app v-model="drawer" class="white">
-        <v-list-item two-line :class="miniVariant && 'px-0'">
-        <v-list-item>
-          <v-list-item-content >
-            <v-list-item-title  class="title black--text" style="font-family : 'MapoPeacefull';">
-              {{user_name}}
-            </v-list-item-title>
-            <v-list-item-subtitle class="grey--text" style="font-family : 'MapoPeacefull';">
-             {{user_email}}
-            </v-list-item-subtitle>
-          </v-list-item-content>
-        </v-list-item>
-        </v-list-item> 
-        <v-divider></v-divider> 
-        <v-list dense nav>
-          <v-list-item v-for="item in items" :key="item.title" link router :to="item.route">
-            <v-list-item-icon>
-              <v-icon class="grey--text">{{ item.icon }}</v-icon>
-            </v-list-item-icon> 
-            <v-list-item-content>
-              <v-list-item-title class="black--text" style="font-family : 'MapoPeacefull';">{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list>
-      </v-navigation-drawer>
-   </nav>
-</template>
 
+<template>
+  <v-layout>
+    <v-app-bar
+      v-scroll="onScroll"
+      app
+      :flat="!isScrolling"
+      :color="!isScrolling ? 'transparent' : '#FFFFFF'"
+      style="z-index: 9999; "
+    >
+      <v-app-bar-nav-icon color="orange" @click="drawer =!drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title class="text-uppercase white--text">
+        <span class="orange--text font-weight-light" style="font-family : 'MapoPeacefull';">Fit</span>
+        <span class="orange--text" style="font-family : 'MapoPeacefull';">Food</span>
+      </v-toolbar-title>
+      <!-- <router-link to="/">
+        <img
+          v-if="this.$route.name == 'home'"
+          :src="!isScrolling ? '/static/fitfoodlogo.png':'/static/fitfoodlogo.png'"
+          id="top"
+          height="100"
+        />
+        <img v-else src="/static/fitfoodlogo.png" id="top" height="100" />
+      </router-link>-->
+      <v-spacer></v-spacer>
+      <v-toolbar-items>
+        <v-btn
+          v-if="this.user_email"
+          text
+          class="grey--text text--darken-4"
+          @click.prevent="signOut"
+          style="font-family : 'MapoPeacefull';"
+        >Logout</v-btn>
+        <v-btn
+          v-else
+          text
+          to="/login"
+          class="grey--text text--darken-4"
+          style="font-family : 'MapoPeacefull';"
+        >Login</v-btn>
+      </v-toolbar-items>
+    </v-app-bar>
+    <v-navigation-drawer app v-model="drawer" height="500" width="95" class="border_line">
+      <v-list-item dense nav two-line :class="miniVariant && 'px-0'">
+        <v-list-item></v-list-item>
+      </v-list-item>
+      <div>
+        <v-list-item v-for="item in items" :key="item.title" link router :to="item.route">
+          <div>
+            <v-list-item-icon>
+              <v-flex>
+                <v-btn text icon color="orange" class="icon_center">
+                  <v-icon medium dark>{{ item.icon }}</v-icon>
+                </v-btn>
+              </v-flex>
+            </v-list-item-icon>
+            <div class="text-center">
+              <v-list-item-title class="text_font font-weight-bold">{{ item.title }}</v-list-item-title>
+            </div>
+          </div>
+        </v-list-item>
+      </div>
+    </v-navigation-drawer>
+  </v-layout>
+</template>
 <script>
 import { mapGetters, mapActions } from "vuex";
-import axios from 'axios';
+import axios from "axios";
 
 export default {
+  data() {
+    return {
+      isScrolling: false
+    };
+  },
   // computed:{
   //   ...mapGetters({
   //     authenticated: 'auth/authenticated',
@@ -52,56 +80,70 @@ export default {
 
   //   })
   // },
-  methods:{
+  methods: {
     // ...mapActions({
     //     signOutAction:'auth/signOut'
     // }),
 
-    signOut(){
-      axios.get(`http://127.0.0.1:8000/logout`)
-      .then(res=>
-      {
-        localStorage.removeItem('current_user');
-        window.location.href='/';
-        console.log(JSON.stringify(res));
-      }
-      )
-      .catch(err=>console.error(err))
+    signOut() {
+      axios
+        .get(`http://127.0.0.1:8000/logout`)
+        .then(res => {
+          localStorage.removeItem("current_user");
+          window.location.href = "/";
+          console.log(JSON.stringify(res));
+        })
+        .catch(err => console.error(err));
     }
   },
-  data(){
-
-    if(localStorage.getItem('current_user')!=null) {
-      console.log("현재 유저 : "+localStorage.getItem('current_user'));
-      axios.get('/show/'+localStorage.getItem('current_user'))
-      .then(res=>
-        {
+  onScroll() {
+    this.isScrolling =
+      (window.pageYOffset || document.documentElement.scrollTop || 0) > 60;
+  },
+  data() {
+    if (localStorage.getItem("current_user") != null) {
+      console.log("현재 유저 : " + localStorage.getItem("current_user"));
+      axios
+        .get("/show/" + localStorage.getItem("current_user"))
+        .then(res => {
           console.log(JSON.stringify(res.data));
-          this.user_email=res.data.user_email;
-          this.user_name=res.data.user_name;
-        }
-      )
-      .catch(err=>console.error(err))
+          this.user_email = res.data.user_email;
+          this.user_name = res.data.user_name;
+        })
+        .catch(err => console.error(err));
     }
 
-
     return {
-      
-      drawer : false,
+      drawer: false,
       user_email: null,
       user_name: null,
       items: [
-        { title: 'Graph', icon: 'mdi-view-dashboard', route: '/graph/daychart'},
-        { title: 'Recommend', icon: 'mdi-image', route:'/recommendmain'},
-        { title: 'Review', icon: 'mdi-help-box', route:'/review'},
-        { title: 'InCome', icon: 'mdi-map-marker-multiple', route:'/income'},
-        { title: 'NewStore', icon: 'mdi-alpha-n-box-outline', route:'/newstore'},        
+        { title: "Graph", icon: "mdi-chart-pie", route: "/graph/daychart" },
+        { title: "Recommend", icon: "mdi-thumb-up", route: "/recommendmain" },
+        { title: "Review", icon: "mdi-comment-edit", route: "/review" },
+        { title: "InCome", icon: "mdi-swap-vertical-circle", route: "/income" },
+        { title: "NewStore", icon: "mdi-store", route: "/newstore" }
       ],
       right: null,
-      miniVariant: false,
-    }
-  } 
-}
+      miniVariant: false
+    };
+  }
+};
 </script>
+
+<style>
+.text_font {
+  font-size: 0.75rem;
+  margin-top: 20px;
+}
+.border_line {
+  border-radius: 15px;
+}
+.icon_center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+</style>
 
 
