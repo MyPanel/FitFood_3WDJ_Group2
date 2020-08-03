@@ -1,60 +1,61 @@
 <template>
-  <v-fade-transition mode="out-in">
-    <v-img src="/static/inomain.png" max-height="100vh">
-      <v-fade-transition mode="out-in">
-        <v-container :key="$route.path" fill-height>
-          <v-layout align-center>
-            <v-fade-transition mode="out-in">
-              <v-flex :key="$route.path" text-xs-left>
-                <h3
-                  class="grey--text text--darken-2 font-weight-bold"
-                  style="margin-bottom:15px; font-family : 'MapoPeacefull';"
-                >AI기반 식단 컨설팅 서비스</h3>
-                <h1
-                  class="display-2 grey--text text--darken-3 font-weight-bold"
-                  style="margin-bottom:3px; font-family : 'MapoPeacefull';"
-                >Find The Most</h1>
-                <h1
-                  class="display-2 grey--text text--darken-3 font-weight-bold"
-                  style="margin-bottom:3px; font-family : 'MapoPeacefull';"
-                >Fitfood For Your</h1>
-                <h1
-                  class="display-2 grey--text text--darken-3 font-weight-bold"
-                  style="margin-bottom:15px; font-family : 'MapoPeacefull';"
-                >Body</h1>
-                <div class="title white--text mt-4">
-                  <h5
-                    class="grey--text text--darken-2 font-weight-light"
-                    style=" font-family : 'MapoPeacefull';"
-                  >내 몸에 딱 맞는 식단으로 체중을 줄이고 질병을</h5>
-                  <h5
-                    class="grey--text text--darken-2 font-weight-light"
-                    style="margin-bottom:15px; font-family : 'MapoPeacefull';"
-                  >예방하는 식사</h5>
-                </div>
-                <!-- <v-btn
-                  color="white"
-                  style="margin-bottom:15px; font-family : 'MapoPeacefull';"
-                  class="title green--text font-weight-bold mt-4 pl-5 pr-5 pa-4"
-                  router
-                  :to="{name: 'signup'}"
-                >Start</v-btn>-->
-                <v-btn
-                  color="orange"
-                  class="white--text"
-                  style="font-family : 'MapoPeacefull';"
-                  rounded
-                  large
-                  router
-                  :to="{name: 'signup'}"
-                >Start Now</v-btn>
-              </v-flex>
-            </v-fade-transition>
-          </v-layout>
-        </v-container>
-      </v-fade-transition>
-    </v-img>
-  </v-fade-transition>
+  <v-layout max-height="100vh">
+    <v-container fill-height>
+      <v-layout>
+        <v-flex text-xs-left>
+          <div>
+            <h1 class="white--text">.</h1>
+            <h1 class="white--text">.</h1>
+            <h1 class="white--text">.</h1>
+          </div>
+          <h3
+            class="grey--text text--darken-2 font-weight-bold"
+            style="margin-bottom:15px; font-family : 'MapoPeacefull';"
+          >AI基盤の食事コンサルティングサービス</h3>
+          <h1
+            class="display-2 grey--text text--darken-3 font-weight-bold"
+            style="margin-bottom:3px; font-family : 'MapoPeacefull';"
+          >Find The Most</h1>
+          <h1
+            class="display-2 grey--text text--darken-3 font-weight-bold"
+            style="margin-bottom:3px; font-family : 'MapoPeacefull';"
+          >Fitfood For Your</h1>
+          <h1
+            class="display-2 grey--text text--darken-3 font-weight-bold"
+            style="margin-bottom:15px; font-family : 'MapoPeacefull';"
+          >Body</h1>
+          <div class="title white--text mt-4">
+            <h5
+              class="grey--text text--darken-2 font-weight-light"
+              style=" font-family : 'MapoPeacefull';"
+            >自分の体にぴったりな</h5>
+            <h5
+              class="grey--text text--darken-2 font-weight-light"
+              style="margin-bottom:15px; font-family : 'MapoPeacefull';"
+            >食事をしましょう！</h5>
+          </div>
+          <v-btn
+            color="orange"
+            class="white--text"
+            style="font-family : 'MapoPeacefull';"
+            rounded
+            large
+            router
+            :to="{name: 'signup'}"
+          >Start Now</v-btn>
+          <div>
+            <h1 class="white--text">.</h1>
+            <h1 class="white--text">.</h1>
+            <h1 class="white--text">.</h1>
+            <h1 class="white--text">.</h1>
+            <h1 class="white--text">.</h1>
+            <h1 class="white--text">.</h1>
+            <h1 class="white--text">.</h1>
+          </div>
+        </v-flex>
+      </v-layout>
+    </v-container>
+  </v-layout>
   <!-- <v-fade-transition mode="out-in">
     <v-layout column>
       <v-flex xs12>

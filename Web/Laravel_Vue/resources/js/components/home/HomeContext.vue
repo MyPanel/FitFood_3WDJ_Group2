@@ -10,7 +10,7 @@
           <h2
             class="grey--text text--darken-4 font-weight-bold"
             style="margin-bottom:5px; font-family : 'MapoPeacefull';"
-          >우리의 서비스</h2>
+          >メーンサービス</h2>
         </v-flex>
         <v-flex
           xs12
@@ -29,7 +29,7 @@
                 justify-center
                 fill-height
                 wrap
-                style="width:60%; height: 120px; border-top-left-radius: 2em;border-bottom-right-radius: 2em;"
+                style="width:60%; height: 140px; border-top-left-radius: 2em;border-bottom-right-radius: 2em;"
               >
                 <v-layout column align-center text-xs-center>
                   <v-card-actions>
@@ -51,6 +51,11 @@
                   </v-card-subtitle>
                 </v-layout>
               </v-card>
+              <div>
+                <h1 class="white--text">.</h1>
+                <h1 class="white--text">.</h1>
+                <h1 class="white--text">.</h1>
+              </div>
             </v-layout>
           </v-container>
         </v-flex>
@@ -66,18 +71,18 @@ export default {
       service: [
         {
           icon: "mdi-finance",
-          title: "영양소 분석 그래프",
+          title: "栄養分析グラフ",
           text: "graph"
         },
         {
           icon: "mdi-thumb-up-outline",
-          title: "식단추천",
+          title: "献立オススメ",
           // text : ' 음식점 추천 서비스는 사용자의 섭취 영양소를 토대로 부족한 영양소를 섭취할 수 있는 학교 주변 음식점의 메뉴를 추천해 줍니다. 음식 추천 서비스는 등록되지 않은 음식점에 가서 식사를 하고 싶은 사용자나 집에서 밥을 해 먹는 사용자를 위해 부족한 영양소를 섭취할 수 있는 음식 추천하고 해당 레시피를 제공하는 서비스입니다.'
           text: "recommend"
         },
         {
           icon: "mdi-note-outline",
-          title: "리뷰 게시판",
+          title: "レビュー掲示板",
           // text : '학교 주변의 음식점 위치와 해당 음식점의 메뉴, 가격, 나오는 시간 등의 정보를 확인할 수 있습니다. 사용자는 음식점의 메뉴에 리뷰 작성이 가능하고 댓글 기능으로 게시판으로도 활용이 가능한 서비스 입니다.'
           text: "review"
         }
