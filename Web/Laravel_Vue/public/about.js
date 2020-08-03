@@ -314,7 +314,7 @@ var render = function() {
                                     },
                                     attrs: {
                                       name: "email",
-                                      label: "email",
+                                      label: "イーメール",
                                       type: "email",
                                       id: "email"
                                     },
@@ -334,7 +334,7 @@ var render = function() {
                                     },
                                     attrs: {
                                       name: "password",
-                                      label: "password",
+                                      label: "パスワード",
                                       id: "password",
                                       type: "password"
                                     },

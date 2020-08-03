@@ -25,19 +25,19 @@
                     <form>
                         <fieldset>
                             <input type="checkbox" :value="1" v-model="selectAyo"/>
-                            <label>칼로리&nbsp;&nbsp;&nbsp;</label>
+                            <label>カロリー&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="2" v-model="selectAyo"/>
-                            <label>탄수화물&nbsp;&nbsp;&nbsp;</label>
+                            <label>炭水化物&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="3" v-model="selectAyo"/>
-                            <label>단백질&nbsp;&nbsp;&nbsp;</label>
+                            <label>たんぱく質&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="4" v-model="selectAyo"/>
-                            <label>지방&nbsp;&nbsp;&nbsp;</label>
+                            <label>脂肪&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="5" v-model="selectAyo"/>
-                            <label>콜레스테롤&nbsp;&nbsp;&nbsp;</label>
+                            <label>コレステロール&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="6" v-model="selectAyo"/>
-                            <label>칼륨&nbsp;&nbsp;&nbsp;</label>
+                            <label>カリウム&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="7" v-model="selectAyo"/>
-                            <label>나트륨&nbsp;&nbsp;&nbsp;</label>
+                            <label>ナトリウム&nbsp;&nbsp;&nbsp;</label>
                             <!-- <input type="checkbox" :value="8" v-model="selectAyo"/>
                             <label>식이섬유&nbsp;&nbsp;&nbsp;</label> -->
                         </fieldset>
@@ -57,7 +57,7 @@ import axios from 'axios'
 
 const datasets = {
         1: {
-            label: '칼로리(kcal)',
+            label: 'カロリー(kcal)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(54, 162, 235, 1)', // blue
             pointBackgroundColor: 'rgba(54, 162, 235, 1)',
@@ -68,7 +68,7 @@ const datasets = {
             backgroundColor: 'transparent',
         },
         2: {
-            label: '탄수화물(g)',
+            label: '炭水化物(g)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)', // red
             pointBackgroundColor: 'rgba(255, 99, 132, 1)',
@@ -79,7 +79,7 @@ const datasets = {
             backgroundColor: 'transparent',
         },
         3: {
-            label: '단백질(g)',
+            label: 'たんぱく質(g)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(255, 159, 64, 1)', // orange
             pointBackgroundColor: 'rgba(255, 159, 64, 1)',
@@ -90,7 +90,7 @@ const datasets = {
             backgroundColor: 'transparent',
         },
         4: {
-            label: '지방(g)',
+            label: '脂肪(g)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)', // green
             pointBackgroundColor: 'rgba(75, 192, 192, 1)',
@@ -101,7 +101,7 @@ const datasets = {
             backgroundColor: 'transparent',
         },
         5: {
-            label: '콜레스트롤(mg)',
+            label: 'コレステロール(mg)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(255, 206, 86, 1)', // yellow
             pointBackgroundColor: 'rgba(255, 206, 86, 1)',
@@ -112,7 +112,7 @@ const datasets = {
             backgroundColor: 'transparent',
         },
         6: {
-            label: '칼륨(mg)',
+            label: 'カリウム(mg)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(108, 63, 61, 1)', // brown
             pointBackgroundColor: 'rgba(108, 63, 61, 1)',
@@ -123,7 +123,7 @@ const datasets = {
             backgroundColor: 'transparent',
         },
         7: {
-            label: '나트륨(mg)',
+            label: 'ナトリウム(mg)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(113, 113, 123, 1)', // grey
             pointBackgroundColor: 'rgba(113, 113, 123, 1)',

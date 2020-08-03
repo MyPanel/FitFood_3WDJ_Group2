@@ -9,10 +9,10 @@
                 <v-layout justify-center style="font-family : 'MapoPeacefull';">
                     <v-flex xs12 sm8 md6>
                         <v-text-field 
-                            type="input" label="업체명" v-model="store_name" required>
+                            type="input" label="店名" v-model="store_name" required>
                         </v-text-field>
                         <v-text-field
-                            type="input" label="사업번호" v-model="store_issuance_number" required>
+                            type="input" label="営業鑑札番号" v-model="store_issuance_number" required>
                         </v-text-field>
                         
                     </v-flex>  
@@ -25,7 +25,7 @@
                                 <v-btn large class="display-1 green--text font-weight"
                                     depressed text :value="1" 
                                     >
-                                    한식
+                                    韓食
                                 </v-btn>
                             </v-flex>
 
@@ -33,7 +33,7 @@
                                 <v-btn large class="display-1 green--text font-weight"
                                     depressed text :value="2"                                
                                     >
-                                    일식
+                                    和食
                                 </v-btn>
                             </v-flex>
 
@@ -41,7 +41,7 @@
                                 <v-btn large class="display-1 green--text font-weight"
                                     depressed text :value="3"                              
                                     >
-                                    양식
+                                    洋食
                                 </v-btn>
                             </v-flex>
 
@@ -49,7 +49,7 @@
                                 <v-btn large class="display-1 green--text font-weight"
                                     depressed text :value="4"
                                     >
-                                    중식
+                                    昼食
                                 </v-btn>
                             </v-flex>
                         </v-btn-toggle>
@@ -58,12 +58,12 @@
                 
                 <v-layout class="mt-4 mb-4" justify-center style="margin-top:25px; font-family : 'MapoPeacefull';">
                     <v-flex xs12 sm4 md1>
-                         <div class="green--text font-weight-bold">주소</div>
+                         <div class="green--text font-weight-bold">住所</div>
                     </v-flex>
                     <v-flex xs12 sm4 md5>
-                        <v-btn color="success" @click="goPopup()">주소 검색
+                        <v-btn color="success" @click="goPopup()">住所 検索
                         </v-btn>
-                        <v-btn @click="juso_check()" >확인</v-btn>
+                        <v-btn @click="juso_check()" >確認</v-btn>
                         <!-- <v-btn @click="map_check()" >위도확인</v-btn> -->
                     </v-flex>
                 </v-layout>
@@ -80,7 +80,7 @@
                             id ="zipNo" v-model="zipNo" required>
                         </v-text-field>
                         <v-alert dark dense outlined type="warning" color="#F57C00" transition="scale-transition">
-                            확인 버튼을 눌러 주세요.
+                            確認ボタンをお願いします。
                         </v-alert>
                 
                     </v-flex>
@@ -89,20 +89,20 @@
                 <v-layout class="mt-4 mb-4" justify-center style="font-family : 'MapoPeacefull';">
                     <v-flex xs12 sm8 md6>
                         <v-text-field
-                            type="input" label="가게 운영 시간" v-model="storetime" required>
+                            type="input" label="店の営業時間" v-model="storetime" required>
                         </v-text-field>
                         <v-text-field
-                            type="input" label="음식 나오는 시간" v-model="storecomeouttime" required>
+                            type="input" label="料理が出る時間" v-model="storecomeouttime" required>
                         </v-text-field>
                     </v-flex>
                 </v-layout>
 
                 <v-layout class="mt-4 mb-4" style="font-family : 'MapoPeacefull';" justify-center>
                     <v-flex xs12 sm4 md1>
-                        <div class="green--text font-weight-bold">메뉴</div>
+                        <div class="green--text font-weight-bold">メニュー</div>
                     </v-flex>
                     <v-flex xs12 sm4 md5>
-                    <v-btn color="success" @click.stop="dialog = true">+ 추가</v-btn>
+                    <v-btn color="success" @click.stop="dialog = true">+ 追加</v-btn>
 
 
 
@@ -195,7 +195,7 @@
                                     type="submit"
                                     color="success" large block
                                     >
-                                    확인
+                                    確認
                                 </v-btn>
                             </v-flex>
                         </v-layout>
