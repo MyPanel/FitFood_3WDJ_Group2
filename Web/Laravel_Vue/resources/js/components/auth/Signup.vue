@@ -1,4 +1,5 @@
 <template>
+<v-img src="/static/back_background.png">
     <v-layout justify-center>
         <v-flex xs12 sm12 md12 class="pa-5">
                 <h1 class="green--text font-weight-bold" style="margin-bottom:30px; text-align:center; font-family : 'MapoPeacefull';">
@@ -118,6 +119,7 @@
                 </v-form>
         </v-flex>
     </v-layout>
+</v-img>
 </template>
 
 <script>

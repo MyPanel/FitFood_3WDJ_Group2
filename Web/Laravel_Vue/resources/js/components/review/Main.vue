@@ -20,16 +20,16 @@
                     </div>
                 </div>
   </div>-->
-  <v-layout align-center justify-space-between row style="width: 100%; font-family : 'MapoPeacefull';">
+  <v-layout style="font-family : 'MapoPeacefull';" class="text-xs-center">
     <v-item-group tag="ul" class="event-card-list" name="fade-in" :css="false" appear>
       <li v-for="item in stores" v-bind:key="item.id">
-        <v-card class="event-card">
+        <v-card justify-center class="event-card" style="border-top-left-radius: 2em; border-top-right-radius: 2em; width:1200px; height:175px; margin-bottom: 60px;">
           <v-layout row>
            
-            <v-layout column justify-space-between style="padding: 0.8em 1.3em; max-width: 390px;">
+            <v-layout column justify-space-between style="padding: 0.8em 1.3em;">
               <div>
-                <h1 class="name"  style="font-family : 'MapoPeacefull';">{{item.store_name}}</h1>
-                <h3 class="address"  style="font-family : 'MapoPeacefull';">{{item.store_address}}</h3>
+                <h1 class="name"  style="font-family : 'MapoPeacefull'; margin-bottom: 20px; margin-left:10px;">{{item.store_name}}</h1>
+                <h3 class="address"  style="font-family : 'MapoPeacefull'; margin-bottom: 7px; margin-left:10px;">{{item.store_address}}</h3>
                 <!-- <div class="rating">
                                         <span v-bind:class="{'rating-active' :checkRating(n, product)}" v-for="n in 5" :key="n">☆</span>
                 </div>-->
@@ -39,11 +39,12 @@
                 <div class="location" style="font-family : 'MapoPeacefull';">
                   <!-- <v-icon>location_on</v-icon>    -->
                   <v-btn
-                    color="green"
+                    color="orange"
                     class="white--text"
-                    style="font-family : 'MapoPeacefull';"
+                    style="font-family : 'MapoPeacefull'; margin-left:10px;"
                     rounded
                     :to="{ name: 'storereview' , params : {id: item.store_id}}"
+                    :elevation="14"
                   >review</v-btn>
                 </div>
               </div>
@@ -161,4 +162,5 @@ export default {
   font-size: 1.16em;
   padding-left: 0.1em;
 }
+
 </style>
