@@ -3,20 +3,19 @@
     <v-card-text class="pa-4">
       <v-container class="d-flex" style="margin-top: 50px;">
         <v-layout>
-            <v-flex style="width:500px;" xs12 sm12 md12>
-              <v-img src="/static/fogg-welcome-2.png" class="ma-5 pa-4"></v-img>
-            </v-flex>
-          </v-layout>
-          <span class="text-xs-left text-md-left">
-            <v-layout row wrap>
-              <v-flex xs12 sm12 md12>
-                <v-form @submit.prevent="submit">
-                  
-                  <v-flex>
+          <v-flex style="width:500px;" xs12 sm12 md12>
+            <v-img src="/static/fogg-welcome-2.png" class="ma-5 pa-4"></v-img>
+          </v-flex>
+        </v-layout>
+        <span class="text-xs-left text-md-left">
+          <v-layout row wrap>
+            <v-flex xs12 sm12 md12>
+              <v-form @submit.prevent="submit">
+                <v-flex>
                   <h1
                     class="green--text font-weight-bold"
-                      style="text-align: center; margin-bottom: 40px; font-family : 'MapoPeacefull';"
-                    >LOGIN</h1>
+                    style="text-align: center; margin-bottom: 40px; font-family : 'MapoPeacefull';"
+                  >LOGIN</h1>
                   <v-text-field
                     name="email"
                     label="イーメール"
@@ -42,22 +41,22 @@
                       text
                       class="success"
                       style="margin-top: 20px; margin-bottom: 20px; font-family : 'MapoPeacefull';"
-                    >LOGIN</v-btn>
+                    >LOGINN</v-btn>
                   </v-card-actions>
                   <v-card-actions>
                     <v-btn
-                        class="green--text"
-                        style="background-color: lightgray; font-family : 'MapoPeacefull';"
-                        block
-                        outlined
-                        @click="signupPage"
-                      >SIGNUP</v-btn>
+                      class="green--text"
+                      style="background-color: lightgray; font-family : 'MapoPeacefull';"
+                      block
+                      outlined
+                      @click="signupPage"
+                    >SIGNUP</v-btn>
                   </v-card-actions>
-                  </v-flex>
-                </v-form>
-              </v-flex> 
-            </v-layout>  
-            </span>
+                </v-flex>
+              </v-form>
+            </v-flex>
+          </v-layout>
+        </span>
       </v-container>
     </v-card-text>
   </v-layout>
@@ -65,7 +64,7 @@
 
 <script>
 import { mapActions } from "vuex";
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   name: "signin",
@@ -80,44 +79,38 @@ export default {
   },
   methods: {
     submit() {
-      axios.post('/check',this.form)
-      .then(res=>
-        {      
+      axios
+        .post("/check", this.form)
+        .then(res => {
           let key = res.data;
-          localStorage.setItem('current_user',key);
-          axios.get('/show/'+localStorage.getItem('current_user'))
-          .then(res=>
-            {
+          localStorage.setItem("current_user", key);
+          axios
+            .get("/show/" + localStorage.getItem("current_user"))
+            .then(res => {
               console.log(res);
-              window.location.href='/';
-            }
-          )
-          .catch(err=>console.error(err))
-        }
-      )
-      .catch(err=>console.error(err))
+              window.location.href = "/";
+            })
+            .catch(err => console.error(err));
+        })
+        .catch(err => console.error(err));
     },
 
     signupPage() {
       this.$router.push({ name: "signup" });
       this.$store.state.isLoginDialog = false;
-
     },
 
     logout() {
-      axios.get('/logout')
-      .then(res=>
-      {
-        localStorage.removeItem('current_user');
-        console.log(JSON.stringify(res));
-      }
-      )
-      .catch(err=>console.error(err))
+      axios
+        .get("/logout")
+        .then(res => {
+          localStorage.removeItem("current_user");
+          console.log(JSON.stringify(res));
+        })
+        .catch(err => console.error(err));
     }
   }
-
-  
-}
+};
 </script>
 
 <style scoped>
@@ -129,5 +122,11 @@ export default {
 </style>
 
 <style scoped>
-@font-face { font-family: 'MapoPeacefull'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face {
+  font-family: "MapoPeacefull";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 </style>
