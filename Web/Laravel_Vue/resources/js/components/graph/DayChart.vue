@@ -4,7 +4,7 @@
         <v-container 
         fluid grid-list-lg 
         class="my-1">
-        <h3 class="text-center" style="font-family : 'MapoPeacefull';">{{ new Date().getMonth()+1 }}월</h3>
+        <h3 class="text-center" style="font-family : 'MapoPeacefull';">{{ new Date().getMonth()+1 }}月</h3>
         <v-layout 
             justify-center 
             fill-height 
@@ -67,19 +67,19 @@
                     <form>
                         <fieldset>
                             <input type="checkbox" :value="1" v-model="selectAyo" name="chkbox"/>
-                            <label>칼로리&nbsp;&nbsp;&nbsp;</label>
+                            <label>カロリー&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="2" v-model="selectAyo" name="chkbox"/>
-                            <label>탄수화물&nbsp;&nbsp;&nbsp;</label>
+                            <label>炭水化物&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="3" v-model="selectAyo" name="chkbox"/>
-                            <label>단백질&nbsp;&nbsp;&nbsp;</label>
+                            <label>たんぱく質&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="4" v-model="selectAyo" name="chkbox"/>
-                            <label>지방&nbsp;&nbsp;&nbsp;</label>
+                            <label>脂肪&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="5" v-model="selectAyo " name="chkbox"/>
-                            <label>콜레스테롤&nbsp;&nbsp;&nbsp;</label>
+                            <label>コレステロール&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="6" v-model="selectAyo" name="chkbox"/>
-                            <label>칼륨&nbsp;&nbsp;&nbsp;</label>
+                            <label>カリウム&nbsp;&nbsp;&nbsp;</label>
                             <input type="checkbox" :value="7" v-model="selectAyo" name="chkbox"/>
-                            <label>나트륨&nbsp;&nbsp;&nbsp;</label>
+                            <label>ナトリウム&nbsp;&nbsp;&nbsp;</label>
                             <!-- <input type="checkbox" :value="8" v-model="selectAyo" name="chkbox"/>
                             <label>식이섬유&nbsp;&nbsp;&nbsp;</label> -->
                         </fieldset>
@@ -99,7 +99,7 @@ import axios from 'axios'
 
 const datasets = {
         1: {
-            label: '칼로리(kcal)',
+            label: 'カロリー(kcal)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(54, 162, 235, 1)', // blue
             pointBackgroundColor: 'rgba(54, 162, 235, 1)',
@@ -110,7 +110,7 @@ const datasets = {
             backgroundColor: 'rgba(54, 162, 235, 0.2)',
         },
         2: {
-            label: '탄수화물(g)',
+            label: '炭水化物(g)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(255, 99, 132, 1)', // red
             pointBackgroundColor: 'rgba(255, 99, 132, 1)',
@@ -121,7 +121,7 @@ const datasets = {
             backgroundColor: 'rgba(255, 99, 132, 0.2)',
         },
         3: {
-            label: '단백질(g)',
+            label: 'たんぱく質(g)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(255, 159, 64, 1)', // orange
             pointBackgroundColor: 'rgba(255, 159, 64, 1)',
@@ -132,7 +132,7 @@ const datasets = {
             backgroundColor: 'rgba(255, 159, 64, 0.2)',
         },
         4: {
-            label: '지방(g)',
+            label: '脂肪(g)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(75, 192, 192, 1)', // green
             pointBackgroundColor: 'rgba(75, 192, 192, 1)',
@@ -143,7 +143,7 @@ const datasets = {
             backgroundColor: 'rgba(75, 192, 192, 0.2)',
         },
         5: {
-            label: '콜레스트롤(mg)',
+            label: 'コレステロール(mg)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(255, 206, 86, 1)', // yellow
             pointBackgroundColor: 'rgba(255, 206, 86, 1)',
@@ -154,7 +154,7 @@ const datasets = {
             backgroundColor: 'rgba(255, 206, 86, 0.2)',
         },
         6: {
-            label: '칼륨(mg)',
+            label: 'カリウム(mg)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(108, 63, 61, 1)', // brown
             pointBackgroundColor: 'rgba(108, 63, 61, 1)',
@@ -165,7 +165,7 @@ const datasets = {
             backgroundColor: 'rgba(108, 63, 61, 0.2)',
         },
         7: {
-            label: '나트륨(mg)',
+            label: 'ナトリウム(mg)',
             // backgroundColor:'rgba(255, 0, 0, 0.2)',
             borderColor: 'rgba(113, 113, 123, 1)', // grey
             pointBackgroundColor: 'rgba(113, 113, 123, 1)',

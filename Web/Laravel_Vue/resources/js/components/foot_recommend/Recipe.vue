@@ -14,17 +14,17 @@
                         <div style="width:500px; height: 400px;" justify-center>
                             <h1 class="font-weight-bold" style="margin-bottom : 50px; font-family : 'MapoPeacefull';">{{recipes.recipe_food}}</h1>
                             <br>
-                            <h2 class="green--text font-weight-bold" style="font-family : 'MapoPeacefull';">영양소</h2>
+                            <h2 class="green--text font-weight-bold" style="font-family : 'MapoPeacefull';">栄養情報</h2>
                             <div style="margin-right:50px; font-family : 'MapoPeacefull';">
-                                칼로리:{{nutrients.nutrient_calorie}}
-                                탄수화물:{{nutrients.nutrient_carbohydrate}}
-                                콜레스테롤:{{nutrients.nutrient_cholesterol}}
-                                단백질:{{nutrients.nutrient_protein}}
-                                지방:{{nutrients.nutrient_fat}}
-                                나트륨:{{nutrients.nutrient_salt}}
+                                カロリー:{{nutrients.nutrient_calorie}}
+                                炭水化物:{{nutrients.nutrient_carbohydrate}}
+                                コレステロール:{{nutrients.nutrient_cholesterol}}
+                                タンパク質:{{nutrients.nutrient_protein}}
+                                脂質:{{nutrients.nutrient_fat}}
+                                ナトリウム:{{nutrients.nutrient_salt}}
                             </div>
                             <br>
-                            <h2 class="green--text font-weight-bold" style="margin-top : 50px; font-family : 'MapoPeacefull';">재료</h2>
+                            <h2 class="green--text font-weight-bold" style="margin-top : 50px; font-family : 'MapoPeacefull';">使われた食材</h2>
                             <div class="d-flex flex-wrap" justify-center>
                                 <h3 style="margin-right:30px; font-family : 'MapoPeacefull';">
                                     {{recipes.recipe_material}}
@@ -36,7 +36,7 @@
 
                 <v-layout justify-center>  
                     <v-flex class="text-md-center" style="margin-top:50px;" xs12 sm12 md6 justify-center>
-                        <h1 class="font-weight-bold" style="margin-top:100px; margin-bottom:50px; text-align:center; font-family : 'MapoPeacefull';"> 만드는 방법 </h1>
+                        <h1 class="font-weight-bold" style="margin-top:100px; margin-bottom:50px; text-align:center; font-family : 'MapoPeacefull';"> 作り方 </h1>
                         <v-img style="margin-top: 25px; width:800px; margin-bottom:30px; text-align:center;" :src="recipes.how_to_make_image_1" justify-center></v-img>
                         <div class="font-weight-bold" style=" font-family : 'MapoPeacefull';">{{recipes.how_to_make_1}}</div>
                         <v-img style="margin-top: 25px; width:800px; margin-bottom:30px;" :src="recipes.how_to_make_image_2"></v-img>

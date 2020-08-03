@@ -2,10 +2,10 @@
   <v-flex xs12>
     <v-card>
       <v-toolbar flat color="orange">
-        <v-toolbar-title class="white--text" style="font-family : 'MapoPeacefull';">리뷰</v-toolbar-title>
+        <v-toolbar-title class="white--text" style="font-family : 'MapoPeacefull';">レビュー</v-toolbar-title>
         <v-divider class="mx-4" inset vertical></v-divider>
         <v-spacer></v-spacer>
-        <v-btn color="white" class="mb-2 orange--text"  style="font-family : 'MapoPeacefull';" @click="mdUp">리뷰작성</v-btn>
+        <v-btn color="white" class="mb-2 orange--text"  style="font-family : 'MapoPeacefull';" @click="mdUp">レビュー作成</v-btn>
       </v-toolbar>
       <v-data-table
         :headers="headers"
@@ -47,16 +47,16 @@
     <v-dialog v-model="dialog" persistent max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="orange--text" style="font-family : 'MapoPeacefull';">리뷰 작성</span>
+          <span class="orange--text" style="font-family : 'MapoPeacefull';">レビュー作成</span>
         </v-card-title>
         <v-card-text>
           <v-container>
             <v-row>
               <v-col cols="12">
-                <v-text-field label="제목" style="font-family : 'MapoPeacefull';" v-model="form.review_title" required></v-text-field>
+                <v-text-field label="題目" style="font-family : 'MapoPeacefull';" v-model="form.review_title" required></v-text-field>
               </v-col>
               <v-col cols="12">
-                <v-textarea label="내용" style="font-family : 'MapoPeacefull';" v-model="form.review_message" required></v-textarea>
+                <v-textarea label="内容" style="font-family : 'MapoPeacefull';" v-model="form.review_message" required></v-textarea>
               </v-col>
               <v-col cols="12" sm="6" md="4">
                 <v-rating
@@ -70,7 +70,7 @@
               </v-col>
             </v-row>
           </v-container>
-          <small style="font-family : 'MapoPeacefull';">부적절한 내용은 처벌의 대상이 될 수 있습니다.</small>
+          <small style="font-family : 'MapoPeacefull';">不適切な内容は処罰の対象になります。</small>
         </v-card-text>
         <v-card-actions>
           <div class="flex-grow-1" style="font-family : 'MapoPeacefull';"></div>
@@ -83,16 +83,16 @@
         <v-dialog v-model="edit_dialog" persistent max-width="600px">
       <v-card>
         <v-card-title>
-          <span class="orange--text" style="font-family : 'MapoPeacefull';">리뷰 수정</span>
+          <span class="orange--text" style="font-family : 'MapoPeacefull';">レビュー修正</span>
         </v-card-title>
         <v-card-text>
           <v-container>
             <v-row>
               <v-col cols="12">
-                <v-text-field label="제목" style="font-family : 'MapoPeacefull';" v-model="edit_form.review_title" required></v-text-field>
+                <v-text-field label="題目" style="font-family : 'MapoPeacefull';" v-model="edit_form.review_title" required></v-text-field>
               </v-col>
               <v-col cols="12">
-                <v-textarea label="내용" style="font-family : 'MapoPeacefull';" v-model="edit_form.review_message" required></v-textarea>
+                <v-textarea label="内容" style="font-family : 'MapoPeacefull';" v-model="edit_form.review_message" required></v-textarea>
               </v-col>
               <v-col cols="12" sm="6" md="4">
                 <v-rating
@@ -106,7 +106,7 @@
               </v-col>
             </v-row>
           </v-container>
-          <small style="font-family : 'MapoPeacefull';">부적절한 내용은 처벌의 대상이 될 수 있습니다.</small>
+          <small style="font-family : 'MapoPeacefull';">不適切な内容は処罰の対象になります。</small>
         </v-card-text>
         <v-card-actions>
           <div class="flex-grow-1"></div>
@@ -149,15 +149,15 @@ export default {
       reviews: [],
       editedIndex: false,
       headers: [
-        { text: "제목", value: "review_title", sortable: true },
+        { text: "題目", value: "review_title", sortable: true },
         {
-          text: "글쓴이",
+          text: "著者",
           value: "user_id",
           width: 150,
           sortable: false
         },
         {
-          text: "날짜",
+          text: "日数",
           value: "created_at",
           sortable: true,
           width: 300,
@@ -244,7 +244,7 @@ export default {
       console.log("수정 아이디값",this.edit_form.review_id) // 여기서 수정 요청
     },
     id2date(created_at) {
-      if (!created_at) return "잘못된 시간 정보";
+      if (!created_at) return "まちがった時間情報";
       return new Date(
         parseInt(created_at.substring(0, 8), 16) * 1000
       ).toLocaleString();

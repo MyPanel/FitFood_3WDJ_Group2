@@ -19,7 +19,7 @@
                     >LOGIN</h1>
                   <v-text-field
                     name="email"
-                    label="email"
+                    label="イーメール"
                     class="email login-input"
                     type="email"
                     id="email"
@@ -28,7 +28,7 @@
                   ></v-text-field>
                   <v-text-field
                     name="password"
-                    label="password"
+                    label="パスワード"
                     class="password login-input"
                     id="password"
                     type="password"
