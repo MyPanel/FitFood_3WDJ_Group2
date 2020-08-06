@@ -76,7 +76,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -92,12 +91,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     submit: function submit() {
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/check', this.form).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("/check", this.form).then(function (res) {
         var key = res.data;
-        localStorage.setItem('current_user', key);
-        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/show/' + localStorage.getItem('current_user')).then(function (res) {
+        localStorage.setItem("current_user", key);
+        axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/show/" + localStorage.getItem("current_user")).then(function (res) {
           console.log(res);
-          window.location.href = '/';
+          window.location.href = "/";
         })["catch"](function (err) {
           return console.error(err);
         });
@@ -112,8 +111,8 @@ __webpack_require__.r(__webpack_exports__);
       this.$store.state.isLoginDialog = false;
     },
     logout: function logout() {
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('/logout').then(function (res) {
-        localStorage.removeItem('current_user');
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("/logout").then(function (res) {
+        localStorage.removeItem("current_user");
         console.log(JSON.stringify(res));
       })["catch"](function (err) {
         return console.error(err);
@@ -153,7 +152,7 @@ module.exports = exports;
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n@font-face { font-family: 'MapoPeacefull'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff'); font-weight: normal; font-style: normal;\n}\r\n", ""]);
+exports.push([module.i, "\n@font-face {\r\n  font-family: \"MapoPeacefull\";\r\n  src: url(\"https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff\")\r\n    format(\"woff\");\r\n  font-weight: normal;\r\n  font-style: normal;\n}\r\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -365,7 +364,7 @@ var render = function() {
                                             text: ""
                                           }
                                         },
-                                        [_vm._v("LOGIN")]
+                                        [_vm._v("LOGINN")]
                                       )
                                     ],
                                     1

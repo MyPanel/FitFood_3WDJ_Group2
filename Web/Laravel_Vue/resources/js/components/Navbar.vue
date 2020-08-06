@@ -9,19 +9,19 @@
       style="z-index: 9999; "
     >
       <v-app-bar-nav-icon color="orange" @click="drawer =!drawer"></v-app-bar-nav-icon>
-      <v-toolbar-title class="text-uppercase white--text">
+      <!-- <v-toolbar-title class="text-uppercase white--text">
         <span class="orange--text font-weight-light" style="font-family : 'MapoPeacefull';">Fit</span>
         <span class="orange--text" style="font-family : 'MapoPeacefull';">Food</span>
-      </v-toolbar-title>
-      <!-- <router-link to="/">
+      </v-toolbar-title>-->
+      <router-link to="/">
         <img
           v-if="this.$route.name == 'home'"
-          :src="!isScrolling ? '/static/fitfoodlogo.png':'/static/fitfoodlogo.png'"
+          :src="!isScrolling ? '/static/web_logo2.png':'/static/web_logo2.png'"
           id="top"
-          height="100"
+          height="17"
         />
-        <img v-else src="/static/fitfoodlogo.png" id="top" height="100" />
-      </router-link>-->
+        <img v-else src="/static/web_logo2.png" id="top" height="17" />
+      </router-link>
       <v-spacer></v-spacer>
       <v-toolbar-items>
         <v-btn
