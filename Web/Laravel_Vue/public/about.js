@@ -76,6 +76,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+<<<<<<< HEAD
+=======
+//
+//
+>>>>>>> efe6aa9e9badfdfe131749f65358fa8d4f959d85
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -235,135 +240,82 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-layout",
+    "v-img",
+    { attrs: { src: "/static/back_background.png" } },
     [
       _c(
-        "v-card-text",
-        { staticClass: "pa-4" },
+        "v-layout",
         [
           _c(
-            "v-container",
-            { staticClass: "d-flex", staticStyle: { "margin-top": "50px" } },
+            "v-card-text",
+            { staticClass: "pa-4" },
             [
               _c(
-                "v-layout",
-                [
-                  _c(
-                    "v-flex",
-                    {
-                      staticStyle: { width: "500px" },
-                      attrs: { xs12: "", sm12: "", md12: "" }
-                    },
-                    [
-                      _c("v-img", {
-                        staticClass: "ma-5 pa-4",
-                        attrs: { src: "/static/fogg-welcome-2.png" }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "span",
-                { staticClass: "text-xs-left text-md-left" },
+                "v-container",
+                {
+                  staticClass: "d-flex",
+                  staticStyle: { "margin-top": "50px" }
+                },
                 [
                   _c(
                     "v-layout",
-                    { attrs: { row: "", wrap: "" } },
                     [
                       _c(
                         "v-flex",
-                        { attrs: { xs12: "", sm12: "", md12: "" } },
+                        {
+                          staticStyle: { width: "500px" },
+                          attrs: { xs12: "", sm12: "", md12: "" }
+                        },
+                        [
+                          _c("v-img", {
+                            staticClass: "ma-5 pa-4",
+                            attrs: { src: "/static/fogg-welcome-2.png" }
+                          })
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    { staticClass: "text-xs-left text-md-left" },
+                    [
+                      _c(
+                        "v-layout",
+                        { attrs: { row: "", wrap: "" } },
                         [
                           _c(
-                            "v-form",
-                            {
-                              on: {
-                                submit: function($event) {
-                                  $event.preventDefault()
-                                  return _vm.submit($event)
-                                }
-                              }
-                            },
+                            "v-flex",
+                            { attrs: { xs12: "", sm12: "", md12: "" } },
                             [
                               _c(
-                                "v-flex",
+                                "v-form",
+                                {
+                                  on: {
+                                    submit: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.submit($event)
+                                    }
+                                  }
+                                },
                                 [
                                   _c(
-                                    "h1",
-                                    {
-                                      staticClass:
-                                        "green--text font-weight-bold",
-                                      staticStyle: {
-                                        "text-align": "center",
-                                        "margin-bottom": "40px",
-                                        "font-family": "'MapoPeacefull'"
-                                      }
-                                    },
-                                    [_vm._v("LOGIN")]
-                                  ),
-                                  _vm._v(" "),
-                                  _c("v-text-field", {
-                                    staticClass: "email login-input",
-                                    staticStyle: {
-                                      "font-family": "'MapoPeacefull'"
-                                    },
-                                    attrs: {
-                                      name: "email",
-                                      label: "イーメール",
-                                      type: "email",
-                                      id: "email"
-                                    },
-                                    model: {
-                                      value: _vm.form.user_email,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "user_email", $$v)
-                                      },
-                                      expression: "form.user_email"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("v-text-field", {
-                                    staticClass: "password login-input",
-                                    staticStyle: {
-                                      "font-family": "'MapoPeacefull'"
-                                    },
-                                    attrs: {
-                                      name: "password",
-                                      label: "パスワード",
-                                      id: "password",
-                                      type: "password"
-                                    },
-                                    model: {
-                                      value: _vm.form.user_password,
-                                      callback: function($$v) {
-                                        _vm.$set(_vm.form, "user_password", $$v)
-                                      },
-                                      expression: "form.user_password"
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-card-actions",
+                                    "v-flex",
                                     [
                                       _c(
-                                        "v-btn",
+                                        "h1",
                                         {
-                                          staticClass: "success",
+                                          staticClass:
+                                            "green--text font-weight-bold",
                                           staticStyle: {
-                                            "margin-top": "20px",
-                                            "margin-bottom": "20px",
+                                            "text-align": "center",
+                                            "margin-bottom": "40px",
                                             "font-family": "'MapoPeacefull'"
-                                          },
-                                          attrs: {
-                                            type: "submit",
-                                            block: "",
-                                            text: ""
                                           }
                                         },
+<<<<<<< HEAD
                                         [_vm._v("LOGINN")]
                                       )
                                     ],
@@ -380,11 +332,104 @@ var render = function() {
                                           staticStyle: {
                                             "background-color": "lightgray",
                                             "font-family": "'MapoPeacefull'"
-                                          },
-                                          attrs: { block: "", outlined: "" },
-                                          on: { click: _vm.signupPage }
+=======
+                                        [_vm._v("LOGIN")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c("v-text-field", {
+                                        staticClass: "email login-input",
+                                        staticStyle: {
+                                          "font-family": "'MapoPeacefull'"
                                         },
-                                        [_vm._v("SIGNUP")]
+                                        attrs: {
+                                          name: "email",
+                                          label: "イーメール",
+                                          type: "email",
+                                          id: "email"
+                                        },
+                                        model: {
+                                          value: _vm.form.user_email,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form,
+                                              "user_email",
+                                              $$v
+                                            )
+>>>>>>> efe6aa9e9badfdfe131749f65358fa8d4f959d85
+                                          },
+                                          expression: "form.user_email"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c("v-text-field", {
+                                        staticClass: "password login-input",
+                                        staticStyle: {
+                                          "font-family": "'MapoPeacefull'"
+                                        },
+                                        attrs: {
+                                          name: "password",
+                                          label: "パスワード",
+                                          id: "password",
+                                          type: "password"
+                                        },
+                                        model: {
+                                          value: _vm.form.user_password,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.form,
+                                              "user_password",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "form.user_password"
+                                        }
+                                      }),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              staticClass: "success",
+                                              staticStyle: {
+                                                "margin-top": "20px",
+                                                "margin-bottom": "20px",
+                                                "font-family": "'MapoPeacefull'"
+                                              },
+                                              attrs: {
+                                                type: "submit",
+                                                block: "",
+                                                text: ""
+                                              }
+                                            },
+                                            [_vm._v("LOGINN")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-card-actions",
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              staticClass: "green--text",
+                                              staticStyle: {
+                                                "background-color": "lightgray",
+                                                "font-family": "'MapoPeacefull'"
+                                              },
+                                              attrs: {
+                                                block: "",
+                                                outlined: ""
+                                              },
+                                              on: { click: _vm.signupPage }
+                                            },
+                                            [_vm._v("SIGNUP")]
+                                          )
+                                        ],
+                                        1
                                       )
                                     ],
                                     1

@@ -1,7 +1,7 @@
 <template>
   <div id="app" v-if="this.$route.name == 'review'">  
     <!-- <Map /> -->
-    <v-content style="background: #eee">
+    <v-content>
     <v-container>
         <v-layout justify-cetner>
             <Main />

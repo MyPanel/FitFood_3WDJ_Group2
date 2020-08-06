@@ -1,4 +1,5 @@
 <template>
+<v-img src="/static/back_background.png">
   <v-layout>
     <v-card-text class="pa-4">
       <v-container class="d-flex" style="margin-top: 50px;">
@@ -60,6 +61,7 @@
       </v-container>
     </v-card-text>
   </v-layout>
+</v-img>
 </template>
 
 <script>

@@ -2,7 +2,7 @@
     <v-container>
         <v-layout>
             <v-flex>
-                <h1 class="green--text font-weight-bold" style="text-align:center; font-family : 'MapoPeacefull';">RECOMMEND</h1>
+                <h1 class="green--text font-weight-bold" style="text-align:center; font-family : 'MapoPeacefull';"></h1>
 
                 <div style="margin-top: 100px; text-align:center; font-family : 'MapoPeacefull';" v-if="check">
                     <h1 class="font-weight-bold"><strong class="success--text"> 朝ご飯 </strong> は食べましたか?</h1>
@@ -15,89 +15,117 @@
                     <v-layout style="margin-top:80px;" justify-center>
                         <!-- 아침 리스트 -->
                         <v-flex xs12 sm10 md6 justify-center v-show="value==3">
-                            <h2 class="orange--text font-weight-bold" style="text-align:center; font-family : 'MapoPeacefull';">朝食</h2>
+                            <h2 class="font-weight-bold" style="font-family : 'MapoPeacefull';">朝食</h2>
                 
-                            <div class="d-flex flex-wrap" xs1 sm3 md6 style="justify-content:center; margin-top:30px;">                   
-                                <v-layout justify-center>
+                                               
+                                <v-layout>
                                     <v-flex xs3 sm3 md12>
-                                        <v-card class="d-flex flex-wrap" style="margin-top:30px;">
+                                        <!-- <v-card class="d-flex flex-wrap" style="margin-top:30px; border-top-right-radius: 4em; border-bottom-left-radius: 4em;"> -->
                                             <div v-for="(recommend,i) in breakfast" v-bind:key="`${i}-${recommend.id}`">              
-                                                <v-card style="margin-top: 80px; height: 300px; width:400px; margin-right:25px; margin-left:25px; font-family : 'MapoPeacefull';">
+                                                <v-card width="330px" height="400px" style="margin-top:25px; margin-bottom:40px; border-top-right-radius: 2em; border-bottom-left-radius: 2em;" :elevation="4">
                                                     <div v-if="break_mealkind == 0">
                                                         <router-link rounded :to="{ name: 'Detailed',params : {id: recommend.store_id}}">
-                                                        <v-img height="300px" width="400px" :src="recommend.image"></v-img>
+                                                        <v-card-media style="font-family : 'MapoPeacefull';">
+                                                            <v-img height="250px" width="330px" style="border-top-right-radius: 2em; border-bottom-left-radius: 2em;" :src="recommend.image"></v-img>
+                                                        </v-card-media>                                                   
                                                         </router-link>
                                                     </div>
+
                                                     <div v-else-if="break_mealkind ==1">
                                                         <router-link rounded :to="{ name: 'Recipe',params : {id: recommend.id}}">
-                                                        <v-img height="300px" width="400px" :src="recommend.image"></v-img>
+                                                        <v-card-media style="font-family : 'MapoPeacefull';">
+                                                            <v-img height="250px" width="330px" style="border-top-right-radius: 2em; border-bottom-left-radius: 2em;" :src="recommend.image"></v-img>
+                                                        </v-card-media>
                                                         </router-link>
                                                     </div>
-                                                    <h1 class="black--text font-weight-bold" style="text-align:center; margin-top: 20px; font-family : 'MapoPeacefull';">{{recommend.recommend_name}}</h1>
+
+                                                    <v-card-title primary-title>
+                                                        <h1 class="black--text font-weight-bold" style="margin-top: 6px; font-family : 'MapoPeacefull';">{{recommend.recommend_name}}</h1>
+                                                    </v-card-title>
+                                                    
+                                                    <div v-if="break_mealkind == 0" style="pointer-events: none; margin-left:10px;">
+                                                            <v-rating v-model="rating" background-color="orange lighten-3" color="orange" style="margin-top: 15px;" medium></v-rating>
+                                                    </div>
                                                 </v-card>
                                             </div>
-                                        </v-card>
+                                        <!-- </v-card> -->
                                     </v-flex>
                                 </v-layout>
-                            </div>
+                            
                         </v-flex>
 
                         <!-- 점심 리스트 -->
                         <v-flex xs12 sm10 md6 justify-center v-show="value==3||value==2">
-                            <h2 class="orange--text font-weight-bold" style="text-align:center; font-family : 'MapoPeacefull';">昼食</h2>
-                
-                            <div class="d-flex flex-wrap" xs1 sm3 md6 style="justify-content:center; margin-top:30px;">                   
+                            <h2 class="font-weight-bold" style="font-family : 'MapoPeacefull';">昼食</h2>
+                               
                                 <v-layout justify-center>
                                     <v-flex xs3 sm3 md12>
-                                        <v-card class="d-flex flex-wrap" style="margin-top:30px;">                   
+                                        <!-- <v-card class="d-flex flex-wrap" style="margin-top:30px;">                    -->
                                             <div v-for="(recommend,i) in lunch" v-bind:key="`${i}-${recommend.id}`">              
-                                                <v-card style="margin-top: 80px; height: 300px; width:400px; margin-right:25px; margin-left:25px; font-family : 'MapoPeacefull';">
+                                                <v-card width="330px" height="400px" style="margin-top:25px; margin-bottom:40px; border-top-right-radius: 2em; border-bottom-left-radius: 2em; font-family : 'MapoPeacefull';" :elevation="4">
                                                     <div v-if="lunch_mealkind == 0">
                                                         <router-link rounded :to="{ name: 'Detailed',params : {id: recommend.store_id}}">
-                                                        <v-img height="300px" width="400px" :src="recommend.image"></v-img>
+                                                        <v-card-media style="font-family : 'MapoPeacefull';">
+                                                            <v-img height="250px" width="330px" style="border-top-right-radius: 2em; border-bottom-left-radius: 2em;" :src="recommend.image"></v-img>
+                                                        </v-card-media>
                                                         </router-link>
                                                     </div>
+
                                                     <div v-else-if="lunch_mealkind ==1">
                                                         <router-link rounded :to="{ name: 'Recipe',params : {id: recommend.id}}">
-                                                        <v-img height="300px" width="400px" :src="recommend.image"></v-img>
+                                                        <v-img height="250px" width="330px" style="border-top-right-radius: 2em; border-bottom-left-radius: 2em;" :src="recommend.image"></v-img>
                                                         </router-link>
                                                     </div>
-                                                    <h1 class="black--text font-weight-bold" style="text-align:center; margin-top: 20px; font-family : 'MapoPeacefull';">{{recommend.recommend_name}}</h1>
+
+                                                    <v-card-title primary-title>
+                                                        <h1 class="black--text font-weight-bold" style="margin-top: 6px; font-family : 'MapoPeacefull';">{{recommend.recommend_name}}</h1>
+                                                    </v-card-title>
+
+                                                    <div v-if="lunch_mealkind == 0" style="pointer-events: none; margin-left:10px;">
+                                                            <v-rating v-model="rating" background-color="orange lighten-3" color="orange" style="margin-top: 15px;" medium></v-rating>
+                                                    </div>
                                                 </v-card>
                                             </div>
-                                        </v-card>
+                                        <!-- </v-card> -->
                                     </v-flex>
                                 </v-layout>
-                            </div>
                         </v-flex>
 
                         <!-- 저녁 -->
                         <v-flex xs12 sm10 md6 justify-center>
-                            <h2 class="orange--text font-weight-bold" style="text-align:center; font-family : 'MapoPeacefull';">夕食</h2>
-                
-                            <div class="d-flex flex-wrap" xs1 sm3 md6 style="justify-content:center; margin-top:30px;">                   
+                            <h2 class="font-weight-bold" style="font-family : 'MapoPeacefull';">夕食</h2>
+                              
                                 <v-layout justify-center>
                                     <v-flex xs3 sm3 md12>
-                                        <v-card class="d-flex flex-wrap" style="margin-top:30px;">                   
+                                        <!-- <v-card class="d-flex flex-wrap" style="margin-top:30px;">                    -->
                                             <div v-for="(recommend,i) in dinner" v-bind:key="`${i}-${recommend.id}`">              
-                                                <v-card style="margin-top: 80px; height: 300px; width:400px; margin-right:25px; margin-left:25px; font-family : 'MapoPeacefull';">
+                                                <v-card width="330px" height="400px" style="margin-top:25px; margin-bottom:40px; border-top-right-radius: 2em; border-bottom-left-radius: 2em; font-family : 'MapoPeacefull';" :elevation="4">
                                                     <div v-if="dinner_mealkind == 0">
                                                         <router-link rounded :to="{ name: 'Detailed',params : {id: recommend.store_id}}">
-                                                        <v-img height="300px" width="400px" :src="recommend.image"></v-img>
+                                                        <v-card-media style="font-family : 'MapoPeacefull';">
+                                                            <v-img height="250px" width="330px" style="border-top-right-radius: 2em; border-bottom-left-radius: 2em;" :src="recommend.image"></v-img>
+                                                        </v-card-media>
                                                         </router-link>
                                                     </div>
+
                                                     <div v-else-if="dinner_mealkind ==1">
                                                         <router-link rounded :to="{ name: 'Recipe',params : {id: recommend.id}}">
-                                                        <v-img height="300px" width="400px" :src="recommend.image"></v-img>
+                                                        <v-img height="250px" width="330px" style="border-top-right-radius: 2em; border-bottom-left-radius: 2em;" :src="recommend.image"></v-img>
                                                         </router-link>
                                                     </div>
-                                                    <h1 class="black--text font-weight-bold" style="text-align:center; margin-top: 20px; font-family : 'MapoPeacefull';">{{recommend.recommend_name}}</h1>
+
+                                                    <v-card-title primary-title>
+                                                        <h1 class="black--text font-weight-bold" style="margin-top: 6px; font-family : 'MapoPeacefull';">{{recommend.recommend_name}}</h1>
+                                                    </v-card-title>
+
+                                                    <div v-if="dinner_mealkind == 0" style="pointer-events: none; margin-left:10px;">
+                                                            <v-rating v-model="rating" background-color="orange lighten-3" color="orange" style="margin-top: 15px;" medium></v-rating>
+                                                    </div>
                                                 </v-card>
                                             </div>
-                                        </v-card>
+                                        <!-- </v-card> -->
                                     </v-flex>
                                 </v-layout>
-                            </div>
                         </v-flex>
                     </v-layout>
                 </div>
@@ -105,43 +133,44 @@
                 <v-dialog v-model="dialog1" persistent max-width="400px">
                     <v-card>
                         <div>
-                            <v-card-title class="justify-center"> 
-                            <span class="headline orange--text font-weight-bold" style="margin-top:20px; font-family : 'MapoPeacefull';">朝ご飯で何を食べましたか?</span>
+                            <v-card-title> 
+                            <span class="headline font-weight-bold" style="margin-top:20px; margin-bottom:20px; font-family : 'MapoPeacefull';">朝ご飯で何を食べましたか?</span>
                             </v-card-title>
+                            <v-divider :inset="inset"></v-divider>
 
                             <v-card-text>
                                 <v-container>
-                                    <v-row>
-                                        <v-col cols="12">
-                                            <v-text-field v-model="break_input" style="font-family : 'MapoPeacefull';" label="何を食べましたか。" required></v-text-field>
+                                    <v-row class="justify-center">
+                                        <v-col cols="10" class="justify-center">
+                                            <v-text-field v-model="break_input" style="font-family : 'MapoPeacefull'; text-align:center;" placeholder="何を食べましたか。" filled rounded dense></v-text-field>
                                         </v-col>
 
                                         <v-flex>
-                                            <h2 class="green--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">昼ご飯は、どうやって食べますか？</h2>
+                                            <h2 class="orange--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">昼ご飯は、どうやって食べますか？</h2>
                                             
                                             <v-layout justify-center>
                                                 <v-radio-group row v-model="lunch_mealkind" class="justify-center">
-                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="success" value="0"></v-radio>
-                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="success" value="1"></v-radio>
+                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="orange" value="0"></v-radio>
+                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="orange" value="1"></v-radio>
                                                 </v-radio-group>
                                             </v-layout>
                                         
-                                            <h2 class="green--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">夕ご飯は、どうやって食べますか？</h2>
+                                            <h2 class="orange--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">夕ご飯は、どうやって食べますか？</h2>
                                             
                                             <v-layout justify-center>
                                                 <v-radio-group row v-model="dinner_mealkind" class="justify-center">
-                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="success" value="0" ></v-radio>
-                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="success" value="1"></v-radio>
+                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="orange" value="0" ></v-radio>
+                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="orange" value="1"></v-radio>
                                                 </v-radio-group>
                                             </v-layout>
                                         </v-flex>
                                     </v-row>
                                 </v-container>
 
+                                <v-divider :inset="inset"></v-divider>
                                 <v-card-actions>
-                                <div class="flex-grow-1"></div>
-                                <v-btn color="orange darken-1" style="font-family : 'MapoPeacefull';" text @click="save()">確認</v-btn>
-                                <v-btn color="orange darken-1" style="font-family : 'MapoPeacefull';" text @click="close()">取り消し</v-btn>
+                                    <v-btn color="orange darken-1" style="font-family : 'MapoPeacefull';" text @click="save()">確認</v-btn>
+                                    <v-btn color="orange darken-1" style="font-family : 'MapoPeacefull';" text @click="close()">取り消し</v-btn>
                                 </v-card-actions>
                             </v-card-text>        
                         </div>                                              
@@ -155,42 +184,42 @@
                                 <v-container>
                                     <v-row>
                                         <v-flex>
-                                            <h2 class="green--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">朝ご飯は、どうやって食べますか？</h2>
+                                            <h2 class="orange--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">朝ご飯は、どうやって食べますか？</h2>
                                             
                                             <v-layout justify-center>
                                                 <v-radio-group row v-model="break_mealkind" class="justify-center">
-                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="success" value="0"></v-radio>
-                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="success" value="1"></v-radio>
+                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="orange" value="0"></v-radio>
+                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="orange" value="1"></v-radio>
                                                 </v-radio-group>
                                             </v-layout>
 
-                                            <h2 class="green--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">昼ご飯は、どうやって食べますか？</h2>
+                                            <h2 class="orange--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">昼ご飯は、どうやって食べますか？</h2>
                                             
                                             <v-layout justify-center>
                                                 <v-radio-group row v-model="lunch_mealkind" class="justify-center">
-                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="success" value="0"></v-radio>
-                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="success" value="1"></v-radio>
+                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="orange" value="0"></v-radio>
+                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="orange" value="1"></v-radio>
                                                 </v-radio-group>
                                             </v-layout>
                                         
-                                            <h2 class="green--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">夕ご飯は、どうやって食べますか？</h2>
+                                            <h2 class="orange--text font-weight-bold" style="text-align:center; margin-top:20px; font-family : 'MapoPeacefull';">夕ご飯は、どうやって食べますか？</h2>
                                             
                                             <v-layout justify-center>
                                                 <v-radio-group row v-model="dinner_mealkind" class="justify-center">
-                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="success" value="0" ></v-radio>
-                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="success" value="1"></v-radio>
+                                                    <v-radio label="食堂" style="font-family : 'MapoPeacefull';" color="orange" value="0" ></v-radio>
+                                                    <v-radio label="レシピ" style="font-family : 'MapoPeacefull';" color="orange" value="1"></v-radio>
                                                 </v-radio-group>
                                             </v-layout>
                                         </v-flex>
                                     </v-row>
                                 </v-container>
 
+                                <v-divider :inset="inset"></v-divider>
                                 <v-card-actions>
-                                <div class="flex-grow-1"></div>
-                                <v-btn color="orange darken-1" style="font-family : 'MapoPeacefull';" text @click="save()">確認</v-btn>
-                                <v-btn color="orange darken-1" style="font-family : 'MapoPeacefull';" text @click="close()">取り消し</v-btn>
-                                </v-card-actions>
-                            </v-card-text>        
+                                    <v-btn color="orange darken-1" style="font-family : 'MapoPeacefull';" text @click="save()">確認</v-btn>
+                                    <v-btn color="orange darken-1" style="font-family : 'MapoPeacefull';" text @click="close()">取り消し</v-btn>       
+                                    </v-card-actions>
+                                </v-card-text>        
                         </div>                                              
                     </v-card>
                 </v-dialog>
@@ -228,6 +257,8 @@ export default {
             breakfast:[], //아침밥 추천값
             lunch:[], // 점심밥 추천값
             dinner:[], // 저녁밥 추천값
+            inset: false,
+            rating:3,
         }
     },
     methods: {
