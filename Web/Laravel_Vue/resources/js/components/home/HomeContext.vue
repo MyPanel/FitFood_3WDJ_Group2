@@ -24,23 +24,22 @@
           <v-container>
             <v-layout column align-center text-xs-center>
               <v-card
-                shaped
+                
                 elevation="8"
                 justify-center
-                fill-height
-                wrap
-                style="width:60%; height: 140px; border-top-left-radius: 2em;border-bottom-right-radius: 2em;"
+                              
+                style="width:80%; height: 175px; border-top-left-radius: 2em;border-bottom-right-radius: 2em;"
               >
-                <v-layout column align-center text-xs-center>
+                <v-layout column align-center>
                   <v-card-actions>
-                    <v-btn fab dark small color="orange">
-                      <v-icon dark>{{ card.icon }}</v-icon>
+                    <v-btn fab large dark style="margin-top:20px;" color="orange">
+                      <v-icon>{{ card.icon }}</v-icon>
                     </v-btn>
                   </v-card-actions>
                   <v-card-title>
                     <h5
-                      class="grey--text text--darken-4 font-weight-bold"
-                      style=" font-family : 'MapoPeacefull';"
+                      class="text--darken-4 font-weight-bold"
+                      style="magin-bottom:20px; font-family : 'MapoPeacefull'; font-size:1.2em; weight:200"
                     >{{ card.title }}</h5>
                   </v-card-title>
                   <v-card-subtitle>
@@ -94,7 +93,7 @@ export default {
 
 <style scoped>
 @font-face {
-  font-family: "MapoPeacefull";
+  font-family: Meiryo,"Hiragino Kaku Gothic ProN","MS PGothic",sans-serif;
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff")
     format("woff");
   font-weight: normal;
