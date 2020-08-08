@@ -1,4 +1,5 @@
 <template>
+<v-img src="/static/back_background.png">
   <v-container grid-list-md>
     <v-layout justify-cetner row>
       <v-flex xs12>
@@ -9,6 +10,7 @@
       <router-view></router-view>
     </v-layout>
   </v-container>
+</v-img>
 </template>
 
 <script>

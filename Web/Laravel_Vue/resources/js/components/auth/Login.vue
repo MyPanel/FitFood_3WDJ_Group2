@@ -42,7 +42,7 @@
                       text
                       class="success"
                       style="margin-top: 20px; margin-bottom: 20px; font-family : 'MapoPeacefull';"
-                    >LOGINN</v-btn>
+                    >LOGIN</v-btn>
                   </v-card-actions>
                   <v-card-actions>
                     <v-btn

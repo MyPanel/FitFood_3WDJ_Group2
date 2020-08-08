@@ -76,11 +76,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-<<<<<<< HEAD
-=======
 //
 //
->>>>>>> efe6aa9e9badfdfe131749f65358fa8d4f959d85
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -315,24 +312,6 @@ var render = function() {
                                             "font-family": "'MapoPeacefull'"
                                           }
                                         },
-<<<<<<< HEAD
-                                        [_vm._v("LOGINN")]
-                                      )
-                                    ],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-card-actions",
-                                    [
-                                      _c(
-                                        "v-btn",
-                                        {
-                                          staticClass: "green--text",
-                                          staticStyle: {
-                                            "background-color": "lightgray",
-                                            "font-family": "'MapoPeacefull'"
-=======
                                         [_vm._v("LOGIN")]
                                       ),
                                       _vm._v(" "),
@@ -355,7 +334,6 @@ var render = function() {
                                               "user_email",
                                               $$v
                                             )
->>>>>>> efe6aa9e9badfdfe131749f65358fa8d4f959d85
                                           },
                                           expression: "form.user_email"
                                         }
@@ -403,7 +381,7 @@ var render = function() {
                                                 text: ""
                                               }
                                             },
-                                            [_vm._v("LOGINN")]
+                                            [_vm._v("LOGIN")]
                                           )
                                         ],
                                         1

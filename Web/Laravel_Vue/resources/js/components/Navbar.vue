@@ -8,7 +8,7 @@
       :color="!isScrolling ? 'transparent' : '#FFFFFF'"
       style="z-index: 9999; "
     >
-      <v-app-bar-nav-icon color="orange" @click="drawer =!drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon color="orange" dark @click="drawer =!drawer"></v-app-bar-nav-icon>
       <!-- <v-toolbar-title class="text-uppercase white--text">
         <span class="orange--text font-weight-light" style="font-family : 'MapoPeacefull';">Fit</span>
         <span class="orange--text" style="font-family : 'MapoPeacefull';">Food</span>
@@ -19,6 +19,7 @@
           :src="!isScrolling ? '/static/web_logo2.png':'/static/web_logo2.png'"
           id="top"
           height="17"
+          style="margin-left : 50px;"
         />
         <img v-else src="/static/web_logo2.png" id="top" height="17" />
       </router-link>
@@ -40,7 +41,7 @@
         >Login</v-btn>
       </v-toolbar-items>
     </v-app-bar>
-    <v-navigation-drawer app v-model="drawer" height="500" width="95" class="border_line">
+    <v-navigation-drawer app v-model="drawer" height="450" width="95" class="border_line" temporary>
       <v-list-item dense nav two-line :class="miniVariant && 'px-0'">
         <v-list-item></v-list-item>
       </v-list-item>

@@ -1,5 +1,6 @@
 /*가게 추천 상세보기 */
 <template>
+<v-img src="/static/back_background.png">
 <v-container justify-center>
         <v-layout justify-center>
             <v-flex justify-center>
@@ -46,6 +47,7 @@
             </v-flex>
         </v-layout>
 </v-container>
+</v-img>
 </template>
 
 <script type="text/javascript" src="/dapi.kakao.com/v2/maps/sdk.js?appkey=451969080561cdf9079bd37cf1e1e7ef"></script>

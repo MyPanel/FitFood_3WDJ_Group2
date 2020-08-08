@@ -1,4 +1,5 @@
 <template>
+<v-img src="/static/back_background.png">
     <v-layout justify-center>
         <v-flex xs12 sm12 md12 class="pa-5">
             <h1 class="green--text font-weight-bold" style="font-family : 'MapoPeacefull'; margin-bottom:30px; text-align:center;">
@@ -204,6 +205,7 @@
             </v-form>
         </v-flex>
     </v-layout>
+</v-img>
 </template>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=451969080561cdf9079bd37cf1e1e7ef"></script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=451969080561cdf9079bd37cf1e1e7ef&libraries=services"></script>

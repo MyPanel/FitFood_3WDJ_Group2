@@ -1,4 +1,5 @@
 <template>
+<v-img src="/static/back_background.png">
     <v-container>
         <v-layout>
             <v-flex>
@@ -233,6 +234,7 @@
     <br>
 
     </v-container>
+</v-img>
 </template>
 <script>
 import axios from 'axios'

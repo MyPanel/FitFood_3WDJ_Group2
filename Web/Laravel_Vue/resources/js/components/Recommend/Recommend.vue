@@ -1,4 +1,5 @@
 <template>
+<v-img src="/static/back_background.png">
     <v-layout justify-center style="margin-top: 50px;">
         
 
@@ -82,6 +83,7 @@
 
     
     </v-layout>
+</v-img>
 </template>
 
 <script>

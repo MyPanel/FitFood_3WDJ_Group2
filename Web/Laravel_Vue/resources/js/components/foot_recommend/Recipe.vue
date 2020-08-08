@@ -1,5 +1,6 @@
 /*레시피 */
 <template>
+<v-img src="/static/back_background.png">
 <v-container>
         <v-layout justify-center>
             <v-flex justify-center>
@@ -73,6 +74,7 @@
             </v-flex>
         </v-layout>
 </v-container>
+</v-img>
 </template>
 
 <script>

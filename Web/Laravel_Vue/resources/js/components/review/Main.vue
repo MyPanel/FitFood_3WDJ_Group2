@@ -1,4 +1,5 @@
 <template>
+<v-img src="/static/back_background.png">
   <!-- <div v-for="product in products" v-bind:key="product.id">
                 <div classs="row">
                     <div class="col-md-5 col-md-offset-0">
@@ -54,6 +55,7 @@
       </li>
     </v-item-group>
   </v-layout>
+</v-img>
 </template>
 <script>
 import axios from "axios";
