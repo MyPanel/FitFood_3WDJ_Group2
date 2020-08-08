@@ -119,11 +119,11 @@ export default {
       user_email: null,
       user_name: null,
       items: [
-        { title: "Graph", icon: "mdi-chart-pie", route: "/graph/daychart" },
-        { title: "Recommend", icon: "mdi-thumb-up", route: "/recommendmain" },
-        { title: "Review", icon: "mdi-comment-edit", route: "/review" },
-        { title: "InCome", icon: "mdi-swap-vertical-circle", route: "/income" },
-        { title: "NewStore", icon: "mdi-store", route: "/newstore" }
+        { title: "グラフ", icon: "mdi-chart-pie", route: "/graph/daychart" },
+        { title: "おすすめ", icon: "mdi-thumb-up", route: "/recommendmain" },
+        { title: "レビュー", icon: "mdi-comment-edit", route: "/review" },
+        { title: "お店見る", icon: "mdi-swap-vertical-circle", route: "/income" },
+        { title: "お店登録", icon: "mdi-store", route: "/newstore" }
       ],
       right: null,
       miniVariant: false
