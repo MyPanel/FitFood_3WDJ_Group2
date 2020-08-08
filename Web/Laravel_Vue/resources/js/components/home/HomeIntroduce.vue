@@ -5,7 +5,7 @@
         <v-layout align-center justify-center row>
           <v-flex xs6 md6 justify-center>
             <v-layout justify-center>
-              <v-img src="/static/iphone.png" class="ma-10" max-width="90%"></v-img>
+              <v-img src="/static/iphone2.png" class="ma-10" max-width="90%"></v-img>
             </v-layout>
           </v-flex>
           <v-spacer></v-spacer>
