@@ -1,13 +1,14 @@
 <template>
+<v-img src="/static/back_background.png">
   <v-container>
       <v-layout>
         <v-flex>
-          <h1 style="font-family : 'MapoPeacefull'; text-align:center;margin-bottom: 100px;">登録店を一目で見る</h1>
+          <h1 style="font-family : 'MapoPeacefull'; text-align:center;margin-bottom: 100px;">お店見る</h1>
           <div id="map" style="width:1000px; height: 500px; margin-top:50px; margin-bottom : 50px; margin-left:auto; margin:0px auto;" justify-center></div>
         </v-flex>
       </v-layout>
   </v-container>
-  
+</v-img>
 </template>
 
 <script type="text/javascript" src="/dapi.kakao.com/v2/maps/sdk.js?appkey=451969080561cdf9079bd37cf1e1e7ef"></script>
