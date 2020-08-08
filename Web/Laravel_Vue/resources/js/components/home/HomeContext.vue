@@ -4,12 +4,12 @@
       <v-layout row wrap align-center text-xs-center style="margin-top:50px;">
         <v-flex xs12 text-md-center text-xs-center style="margin-bottom:20px;">
           <h5
-            class="orange--text font-weight-bold"
-            style="margin-bottom:3px; font-family : 'MapoPeacefull';"
+            class="orange--text font-weight-bold wf-nikukyu"
+            style="margin-bottom:3px;"
           >Service</h5>
           <h2
-            class="grey--text text--darken-4 font-weight-bold"
-            style="margin-bottom:5px; font-family : 'MapoPeacefull';"
+            class="grey--text text--darken-4 font-weight-bold wf-nikukyu"
+            style="margin-bottom:5px;"
           >メーンサービス</h2>
         </v-flex>
         <v-flex
@@ -17,7 +17,8 @@
           sm8
           md8
           lg4
-          style="margin-bottom:20px; font-family : 'MapoPeacefull';"
+          class="wf-nikukyu"
+          style="margin-bottom:20px;"
           v-for="card in service"
           :key="card.title"
         >
@@ -38,14 +39,13 @@
                   </v-card-actions>
                   <v-card-title>
                     <h5
-                      class="text--darken-4 font-weight-bold"
-                      style="magin-bottom:20px; font-family : 'MapoPeacefull'; font-size:1.2em; weight:200"
+                      class="text--darken-4 font-weight-bold wf-nikukyu"
+                      style="magin-bottom:20px; font-size:1.2em; weight:200"
                     >{{ card.title }}</h5>
                   </v-card-title>
                   <v-card-subtitle>
                     <div
-                      class="grey--text text--darken-2"
-                      style="font-family : 'MapoPeacefull';"
+                      class="grey--text text--darken-2 wf-nikukyu"
                     >{{ card.text }}</div>
                   </v-card-subtitle>
                 </v-layout>
@@ -92,11 +92,5 @@ export default {
 </script>
 
 <style scoped>
-@font-face {
-  font-family: Meiryo,"Hiragino Kaku Gothic ProN","MS PGothic",sans-serif;
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+.wf-nikukyu { font-family: "Nikukyu"; }
 </style>
