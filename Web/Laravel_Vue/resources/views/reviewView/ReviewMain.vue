@@ -1,4 +1,5 @@
 <template>
+<v-img src="/static/back_background.png">
   <div id="app" v-if="this.$route.name == 'review'">  
     <!-- <Map /> -->
     <v-content>
@@ -12,6 +13,7 @@
   <div v-else>
       <Store />
   </div>
+</v-img>
 </template>
 
 <script>
