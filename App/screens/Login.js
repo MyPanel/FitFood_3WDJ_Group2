@@ -66,7 +66,7 @@ function Login({ navigation, firebase }) {
     const formData = new FormData();
     formData.append('user_email', email);
     formData.append('user_password', password);
-    fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/login`,
+    fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/login`,
       {
         method: 'POST',
         body: formData

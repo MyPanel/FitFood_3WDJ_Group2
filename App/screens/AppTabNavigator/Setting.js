@@ -43,7 +43,7 @@ class App extends React.Component {
     let user_email = firebase.auth().currentUser.email;
     let formData = new FormData();
     formData.append('user_email', user_email);
-    fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/user`, {
+    fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/user`, {
       method: 'POST',
       body: formData
     })

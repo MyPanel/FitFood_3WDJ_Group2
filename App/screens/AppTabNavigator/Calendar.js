@@ -114,7 +114,7 @@ class App extends React.Component {
         const data = new FormData();
         data.append('user_email', firebase.auth().currentUser.email);
         data.append('date', day.dateString);
-        fetch('http://ec2-52-72-52-75.compute-1.amazonaws.com/eaten_data',
+        fetch('http://ec2-34-239-220-61.compute-1.amazonaws.com/eaten_data',
             { method: 'POST', body: data }
         )
             .then((res) => res.json())

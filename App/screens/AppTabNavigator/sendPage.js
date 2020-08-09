@@ -36,7 +36,7 @@ class App extends React.Component {
 
     async start_animation() {
         this.props.navigation.navigate('animation', { 'data': this.state.uri });
-        fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/start`, {
+        fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/start`, {
             method: 'GET'
         }).then(res => res.text()).then(res => console.log(res));
     }
@@ -47,7 +47,7 @@ class App extends React.Component {
         navigator.geolocation.getCurrentPosition(position => {
             formData.append('Latitude', position.coords.longitude);
             formData.append('Longitude', position.coords.latitude);
-            fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/gps`, { method: 'POST', body: formData })
+            fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/gps`, { method: 'POST', body: formData })
                 .then(res => res.json())
                 .then(res => {
                     let store_id = res[0].store_id;
@@ -63,7 +63,7 @@ class App extends React.Component {
                             eatenData.append('food_name', res);
                             console.log('food_name : ' + res);
                             // AWS로 한글 데이터 전송 시 한글 인식 실패 POSTMAN으로는 정상 작동
-                            fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/app_eaten`, { method: 'POST', body: eatenData })
+                            fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/app_eaten`, { method: 'POST', body: eatenData })
                                 .then((res) => res.text())
                                 .then(res => {
                                     console.log('저장완료');

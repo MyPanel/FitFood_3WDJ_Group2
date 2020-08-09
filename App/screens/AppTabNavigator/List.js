@@ -68,7 +68,7 @@ class App extends React.Component {
         navigation.addListener('didFocus', () => {
             formData.append('user_email', firebase.auth().currentUser.email);
             formData.append('date', selected_day);
-            fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/eaten_data`, {
+            fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/eaten_data`, {
                 method: 'POST',
                 body: formData
             }).then(res => res.json()).then(res => {
@@ -92,7 +92,7 @@ class App extends React.Component {
                 formData_.append('user_email', firebase.auth().currentUser.email);
                 formData_.append('food_name', this.state.breakfast);
                 // 아침 추가
-                fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/app_eaten`, { method: 'POST', body: formData_ })
+                fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/app_eaten`, { method: 'POST', body: formData_ })
                     .then((res) => res.text())
                     .then(res => { console.log(res); })
                     .catch((e) => console.log(e));

@@ -32,7 +32,7 @@ class Like extends React.Component {
         formData1.append('user_email', firebase.auth().currentUser.email);
         formData1.append('date', '2020-06-24');
 
-        fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/eaten_data`, {
+        fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/eaten_data`, {
             method: 'POST',
             body: formData1
         }).then(res => res.json()).then(res => {
@@ -65,7 +65,7 @@ class Like extends React.Component {
             formData2.append('user_email', firebase.auth().currentUser.email);
             formData2.append('date', '2020-06-25');
 
-            fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/eaten_data`, {
+            fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/eaten_data`, {
                 method: 'POST',
                 body: formData2
             }).then(res => res.json()).then(res => {
@@ -92,7 +92,7 @@ class Like extends React.Component {
                 formData3.append('user_email', firebase.auth().currentUser.email);
                 formData3.append('date', '2020-06-26');
 
-                fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/eaten_data`, {
+                fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/eaten_data`, {
                     method: 'POST',
                     body: formData3
                 }).then(res => res.json()).then(res => {
@@ -119,7 +119,7 @@ class Like extends React.Component {
                     formData4.append('user_email', firebase.auth().currentUser.email);
                     formData4.append('date', '2020-06-27');
 
-                    fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/eaten_data`, {
+                    fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/eaten_data`, {
                         method: 'POST',
                         body: formData4
                     }).then(res => res.json()).then(res => {
@@ -146,7 +146,7 @@ class Like extends React.Component {
                         formData5.append('user_email', firebase.auth().currentUser.email);
                         formData5.append('date', '2020-06-28');
 
-                        fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/eaten_data`, {
+                        fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/eaten_data`, {
                             method: 'POST',
                             body: formData5
                         }).then(res => res.json()).then(res => {
@@ -172,7 +172,7 @@ class Like extends React.Component {
                             formData6.append('user_email', firebase.auth().currentUser.email);
                             formData6.append('date', '2020-06-29');
 
-                            fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/eaten_data`, {
+                            fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/eaten_data`, {
                                 method: 'POST',
                                 body: formData6
                             }).then(res => res.json()).then(res => {
@@ -197,7 +197,7 @@ class Like extends React.Component {
                                 formData7.append('user_email', firebase.auth().currentUser.email);
                                 formData7.append('date', '2020-06-30');
 
-                                fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/eaten_data`, {
+                                fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/eaten_data`, {
                                     method: 'POST',
                                     body: formData7
                                 }).then(res => res.json()).then(res => {

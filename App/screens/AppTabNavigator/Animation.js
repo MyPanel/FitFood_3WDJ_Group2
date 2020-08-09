@@ -185,7 +185,7 @@ export default class App extends Component {
 
   eat_end() {
     this.props.navigation.navigate('sendPage');
-    fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/end`, {
+    fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/end`, {
       method: 'GET'
     }).then(res => res.text()).then(res => console.log(res));
   }
@@ -224,7 +224,7 @@ export default class App extends Component {
             until={15}
             onFinish={() => {
               this.props.navigation.navigate('sendPage');
-              fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/end`, {
+              fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/end`, {
                 method: 'GET'
               }).then(res => res.text()).then(res => console.log(res));
             }}
@@ -233,7 +233,7 @@ export default class App extends Component {
           <TouchableOpacity
             onPress={() => {
               this.props.navigation.navigate('sendPage');
-              fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/end`, {
+              fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/end`, {
                 method: 'GET'
               }).then(res => res.text()).then(res => console.log(res));
             }}
