@@ -130,7 +130,19 @@ export default class CardView extends React.Component {
             <TouchableOpacity
               style={{ flex: 1 }}
               onPress={() => {
-                navigation.navigate('Map');
+                if (Number(data[0]) > 0) {
+                  this.setState({
+                    store_dialog: true,
+                    food: data[2],
+                    image: data[1]
+                  });
+                } else {
+                  this.setState({
+                    recipe_dialog: true,
+                    image: data[1]
+                  })
+                }
+                this.get_position(data[0]);
               }}>
               <Image
                 source={{ uri: data[1] }}
@@ -146,7 +158,19 @@ export default class CardView extends React.Component {
             <TouchableOpacity
               style={{ flex: 1 }}
               onPress={() => {
-                navigation.navigate('Map');
+                if (Number(data[3]) > 0) {
+                  this.setState({
+                    store_dialog: true,
+                    food: data[5],
+                    image: data[4]
+                  });
+                } else {
+                  this.setState({
+                    recipe_dialog: true,
+                    image: data[4]
+                  })
+                }
+                this.get_position(data[3]);
               }}>
               <Image
                 source={{ uri: data[4] }}
@@ -173,198 +197,119 @@ export default class CardView extends React.Component {
             containerStyle={{ paddingLeft: 290 }}
           />
         </View>
+        <Dialog.Container visible={this.state.recipe_dialog}>
+          <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.food}</Dialog.Title>
+          <View>
+            <View style={{ marginBottom: 20 }}>
+              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>재료</Text>
+              <View>
+                <Text>
+                  {this.state.material}
+                </Text>
+              </View>
+            </View>
+            <View style={{ marginBottom: 10 }}>
+              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>만드는 방법</Text>
+              <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                {this.state.recipe.map((value, index) => <Text>{value}</Text>)}
+              </View>
+            </View>
+          </View>
+          <View style={{ margin: 5 }}>
+            <Text style={{ fontSize: 10, color: "red", marginBottom: 3, marginLeft: 10 }}>*레시피대로 드셨다면 확인버튼을 눌러주세요</Text>
+            <Button
+              title="확인"
+              titleStyle={{
+                fontSize: 13,
+                color: 'white',
+                textAlign: 'center',
+              }}
+              onPress={this.send_server.bind(this)}
+              buttonStyle={{
+                height: 30,
+                justifyContent: 'center',
+                alignItems: 'center',
+                borderRadius: 30,
+                backgroundColor: '#ff9f0d'
+              }}
+              containerStyle={{ marginVertical: 3 }}
+            />
+          </View>
+          <Button
+            title="취소"
+            titleStyle={{
+              fontSize: 13,
+              color: 'white',
+              textAlign: 'center',
+            }}
+            onPress={this.handleDelete.bind(this)}
+            buttonStyle={{
+              height: 30,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderRadius: 30,
+              backgroundColor: '#ff9f0d'
+            }}
+            containerStyle={{ marginVertical: 3 }}
+          />
+        </Dialog.Container>
+
+        <Dialog.Container visible={this.state.store_dialog}>
+          <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.title}</Dialog.Title>
+          <View style={{ justifyContent: 'center' }}>
+            <View style={{ flexDirection: 'row' }}>
+              <View style={{ justifyContent: 'center', marginBottom: 20 }} >
+                <View style={{ padding: 15 }}>
+                  <Image
+                    source={{ uri: this.state.image }}
+                    style={{ height: 130, width: 130 }}
+                  />
+                </View>
+
+              </View>
+              <View style={{ justifyContent: 'center', marginLeft: 10 }} >
+                <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>{this.state.food}</Text>
+              </View>
+            </View>
+            <View style={{ justifyContent: 'center', marginBottom: 10 }}>
+              <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>가게 위치</Text>
+            </View>
+            <MapView
+              initialRegion={{
+                latitude: 35.89346514,
+                longitude: 128.6220269,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+              }}
+              style={styles.mapStyle}>
+              <Marker
+                coordinate={{
+                  latitude: this.state.latitude_, longitude: this.state.longitude_
+                }}
+                title={this.state.title}
+                description={this.state.address}
+              />
+            </MapView>
+          </View>
+          <Button
+            title="취소"
+            titleStyle={{
+              fontSize: 13,
+              color: 'white',
+              textAlign: 'center',
+            }}
+            onPress={this.handleDelete.bind(this)}
+            buttonStyle={{
+              height: 30,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderRadius: 30,
+              backgroundColor: '#ff9f0d'
+            }}
+            containerStyle={{ marginVertical: 7 }}
+          />
+        </Dialog.Container>
       </View>
-
-      // <View
-      //   style={{
-      //     marginLeft: 20,
-      //     marginRight: 20
-      //   }}>
-      //   <View style={{ flexDirection: 'row' }}>
-      //     <View style={{ marginLeft: 10, marginTop: 10 }}>
-      //       <TouchableOpacity
-      //         style={{ flex: 1 }}
-      //         onPress={() => {
-      //           if (Number(data[0]) > 0) {
-      //             this.setState({
-      //               store_dialog: true,
-      //               food: data[2],
-      //               image: data[1]
-      //             });
-      //           } else {
-      //             this.setState({
-      //               recipe_dialog: true,
-      //               image: data[1]
-      //             })
-      //           }
-      //           this.get_position(data[0]);
-      //         }}>
-      //         <Image
-      //           source={{ uri: data[1] }}
-      //           style={{ height: 150, width: 150, borderRadius: 20 }}
-      //         />
-      //       </TouchableOpacity>
-      //       <View style={{ marginTop: 5 }}>
-      //         <Text style={{ fontSize: 12, fontWeight: "bold" }}>{data[2]}</Text>
-      //       </View>
-      //     </View>
-
-      //     <View style={{ marginLeft: 10, marginTop: 10 }}>
-      //       <TouchableOpacity
-      //         style={{ flex: 1 }}
-      //         onPress={() => {
-      //           if (Number(data[3]) > 0) {
-      //             this.setState({
-      //               store_dialog: true,
-      //               food: data[5],
-      //               image: data[4]
-      //             });
-      //           } else {
-      //             this.setState({
-      //               recipe_dialog: true,
-      //               image: data[4]
-      //             })
-      //           }
-      //           this.get_position(data[3]);
-      //         }}>
-      //         <Image
-      //           source={{ uri: data[4] }}
-      //           style={{ height: 150, width: 150, borderRadius: 20 }}
-      //         />
-      //       </TouchableOpacity>
-      //       <View style={{ marginTop: 5 }}>
-      //         <Text style={{ fontSize: 12, fontWeight: "bold" }}>{data[5]}</Text>
-      //       </View>
-      //     </View>
-      //   </View>
-      //   <View style={{ flexDirection: 'row' }}>
-
-      //     <Icon
-      //       raised
-      //       name='heart'
-      //       type='font-awesome'
-      //       color={this.state.buttonColor}
-      //       onPress={() => {
-      //         this.change_color();
-      //         this.onButtonPress(data)
-      //       }}
-      //       size={13}
-      //       containerStyle={{ paddingLeft: 290 }}
-      //     />
-      //   </View>
-      //   <Dialog.Container visible={this.state.recipe_dialog}>
-      //     <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.food}</Dialog.Title>
-      //     <View>
-      //       <View style={{ marginBottom: 20 }}>
-      //         <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: '#1fa518', marginBottom: 5 }}>재료</Text>
-      //         <View>
-      //           <Text>
-      //             {this.state.material}
-      //           </Text>
-      //         </View>
-      //       </View>
-      //       <View style={{ marginBottom: 10 }}>
-      //         <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: '#1fa518', marginBottom: 5 }}>만드는 방법</Text>
-      //         <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-      //           {this.state.recipe.map((value, index) => <Text>{value}</Text>)}
-      //         </View>
-      //       </View>
-      //     </View>
-      //     <View style={{ margin: 5 }}>
-      //       <Text style={{ fontSize: 10, color: "red", marginBottom: 3, marginLeft: 10 }}>*레시피대로 드셨다면 확인버튼을 눌러주세요</Text>
-      //       <Button
-      //         title="확인"
-      //         titleStyle={{
-      //           fontSize: 13,
-      //           color: 'white',
-      //           textAlign: 'center',
-      //         }}
-      //         onPress={this.send_server.bind(this)}
-      //         buttonStyle={{
-      //           height: 30,
-      //           justifyContent: 'center',
-      //           alignItems: 'center',
-      //           borderRadius: 30,
-      //           backgroundColor: '#1fa518'
-      //         }}
-      //         containerStyle={{ marginVertical: 3 }}
-      //       />
-      //     </View>
-      //     <Button
-      //       title="취소"
-      //       titleStyle={{
-      //         fontSize: 13,
-      //         color: 'white',
-      //         textAlign: 'center',
-      //       }}
-      //       onPress={this.handleDelete.bind(this)}
-      //       buttonStyle={{
-      //         height: 30,
-      //         justifyContent: 'center',
-      //         alignItems: 'center',
-      //         borderRadius: 30,
-      //         backgroundColor: '#1fa518'
-      //       }}
-      //       containerStyle={{ marginVertical: 3 }}
-      //     />
-      //   </Dialog.Container>
-
-      //   <Dialog.Container visible={this.state.store_dialog}>
-      //     <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.title}</Dialog.Title>
-      //     <View style={{ justifyContent: 'center' }}>
-      //       <View style={{ flexDirection: 'row' }}>
-      //         <View style={{ justifyContent: 'center', marginBottom: 20 }} >
-      //           <View style={{ padding: 15 }}>
-      //             <Image
-      //               source={{ uri: this.state.image }}
-      //               style={{ height: 130, width: 130 }}
-      //             />
-      //           </View>
-
-      //         </View>
-      //         <View style={{ justifyContent: 'center', marginLeft: 10 }} >
-      //           <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>{this.state.food}</Text>
-      //         </View>
-      //       </View>
-      //       <View style={{ justifyContent: 'center', marginBottom: 10 }}>
-      //         <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>가게 위치</Text>
-      //       </View>
-      //       <MapView
-      //         initialRegion={{
-      //           latitude: 35.89346514,
-      //           longitude: 128.6220269,
-      //           latitudeDelta: 0.0922,
-      //           longitudeDelta: 0.0421,
-      //         }}
-      //         style={styles.mapStyle}>
-      //         <Marker
-      //           coordinate={{
-      //             latitude: this.state.latitude_, longitude: this.state.longitude_
-      //           }}
-      //           title={this.state.title}
-      //           description={this.state.address}
-      //         />
-      //       </MapView>
-      //     </View>
-      //     <Button
-      //       title="취소"
-      //       titleStyle={{
-      //         fontSize: 13,
-      //         color: 'white',
-      //         textAlign: 'center',
-      //       }}
-      //       onPress={this.handleDelete.bind(this)}
-      //       buttonStyle={{
-      //         height: 30,
-      //         justifyContent: 'center',
-      //         alignItems: 'center',
-      //         borderRadius: 30,
-      //         backgroundColor: '#1fa518'
-      //       }}
-      //       containerStyle={{ marginVertical: 7 }}
-      //     />
-      //   </Dialog.Container>
-      // </View>
     )
   }
 

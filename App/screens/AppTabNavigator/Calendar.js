@@ -300,6 +300,7 @@ class App extends React.Component {
                                                 <Text onPress={this.dinner_get} style={styles.cardtext}>夕食</Text>
                                                 <Plan data={[this.state.d_i, this.state.d_n, this.state.d_s]} />
                                             </View>
+
                                         </View>
                                     </Content>
                                 </Container>

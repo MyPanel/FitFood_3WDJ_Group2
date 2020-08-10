@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Dimensions, StyleSheet, Text, View, Image } from 'react-native';
+import { TouchableOpacity, Dimensions, StyleSheet, Text, View, Image, ScrollView } from 'react-native';
 import { Card, CardItem, Thumbnail, Body, Left, Right } from 'native-base';
 import MapView, { Marker } from 'react-native-maps';
 import Dialog from 'react-native-dialog';
@@ -62,7 +62,7 @@ export default class CardView2 extends React.Component {
     formData.append('food_name', this.state.food);
     formData.append('user_email', firebase.auth().currentUser.email);
     console.log(formData);
-    fetch(`http://ec2-52-72-52-75.compute-1.amazonaws.com/app_eaten`, { method: 'POST', body: formData })
+    fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/app_eaten`, { method: 'POST', body: formData })
       .then(res => res.text()).then(res => {
         console.log(res);
       });
@@ -215,7 +215,7 @@ export default class CardView2 extends React.Component {
           <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.food}</Dialog.Title>
           <View>
             <View style={{ marginBottom: 20 }}>
-              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: '#1fa518', marginBottom: 5 }}>재료</Text>
+              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>재료</Text>
               <View>
                 <Text>
                   {this.state.material}
@@ -223,7 +223,7 @@ export default class CardView2 extends React.Component {
               </View>
             </View>
             <View style={{ marginBottom: 10 }}>
-              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: '#1fa518', marginBottom: 5 }}>만드는 방법</Text>
+              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>만드는 방법</Text>
               <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 {this.state.recipe.map((value, index) => <Text>{value}</Text>)}
               </View>
@@ -244,7 +244,7 @@ export default class CardView2 extends React.Component {
                 justifyContent: 'center',
                 alignItems: 'center',
                 borderRadius: 30,
-                backgroundColor: '#1fa518'
+                backgroundColor: '#ff9f0d'
               }}
               containerStyle={{ marginVertical: 3 }}
             />
@@ -262,7 +262,7 @@ export default class CardView2 extends React.Component {
               justifyContent: 'center',
               alignItems: 'center',
               borderRadius: 30,
-              backgroundColor: '#1fa518'
+              backgroundColor: '#ff9f0d'
             }}
             containerStyle={{ marginVertical: 3 }}
           />
@@ -318,7 +318,7 @@ export default class CardView2 extends React.Component {
               justifyContent: 'center',
               alignItems: 'center',
               borderRadius: 30,
-              backgroundColor: '#1fa518'
+              backgroundColor: '#ff9f0d'
             }}
             containerStyle={{ marginVertical: 7 }}
           />

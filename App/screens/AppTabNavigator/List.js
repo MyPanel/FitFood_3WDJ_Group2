@@ -12,7 +12,7 @@ import { createStackNavigator } from 'react-navigation-stack';
 //import { DialogTitle } from 'react-native-paper/lib/typescript/src/components/Dialog/DialogTitle';
 import Map from './Map';
 
-class App extends React.Component {
+class List extends React.Component {
 
     constructor(props) {
         super(props);
@@ -392,8 +392,8 @@ class App extends React.Component {
                                 }}>
                                     <Icon name='ios-checkmark-circle' style={{ fontsize: '25', color: 'orange' }} ></Icon>
                                     <View style={{ flex: 1 }}>
-                                        {/* <Text style={{ fontsize: '23', color: "grey", padding: 10 }}>{this.state.text}</Text> */}
-                                        <Text style={{ fontsize: '23', color: "grey", padding: 10 }}>あなたにお勧めの献立</Text>
+                                        <Text style={{ fontsize: '23', color: "grey", padding: 10 }}>{this.state.text}</Text>
+                                        {/* <Text style={{ fontsize: '23', color: "grey", padding: 10 }}>あなたにお勧めの献立</Text> */}
                                     </View>
                                 </View>
                                 <View style={{ paddingLeft: 25, paddingTop: 25 }}>
@@ -438,8 +438,8 @@ class App extends React.Component {
                                 }}>
                                     <Icon name='ios-checkmark-circle' style={{ fontsize: '25', color: 'orange' }} ></Icon>
                                     <View style={{ flex: 1 }}>
-                                        {/* <Text style={{ fontsize: '23', color: "grey", padding: 10 }}>{this.state.text}</Text> */}
-                                        <Text style={{ fontsize: '23', color: "grey", padding: 10 }}>あなたにお勧めの献立</Text>
+                                        <Text style={{ fontsize: '23', color: "grey", padding: 10 }}>{this.state.text}</Text>
+                                        {/* <Text style={{ fontsize: '23', color: "grey", padding: 10 }}>あなたにお勧めの献立</Text> */}
                                     </View>
                                 </View>
                                 <View style={{ paddingLeft: 25, paddingTop: 25 }}>
@@ -534,23 +534,5 @@ const styles = StyleSheet.create({
     }
 });
 
-const main = createStackNavigator({
-    //이동할 페이지들 리스트 
-    Map: { screen: Map },
-    CardView: { screen: CardView },
-    List: {
-        screen: App, navigationOptions: ({ navigation }) => ({
-            header: null
-        })
-    },
-}, {
-    headerMode: "none",
-    initialRouteName: 'List',
-    navigationOptions: ({
-        headerVisible: false
-    })
-},
-);
 
-
-export default createAppContainer(main);
+export default List

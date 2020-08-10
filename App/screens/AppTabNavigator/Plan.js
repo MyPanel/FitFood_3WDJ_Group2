@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { Card, CardItem, Icon, Body, Right, Left } from 'native-base';
 import { Button, Rating } from 'react-native-elements'
 import Dialog from 'react-native-dialog';
@@ -82,153 +82,155 @@ export default class Plan extends React.Component {
     const { data } = this.props;
 
     return (
-      <View style={styles.card}>
-        <View style={styles.carditem}>
-          <View style={{ padding: 10 }} >
-            <View style={{ flexDirection: 'row' }}>
-              <Image
-                source={{ uri: data[2] }}
-                style={{ height: 110, width: 110, borderRadius: 20 }}
-              />
-              <Text style={styles.foodtext}>{data[1]}</Text>
+      <View>
+        <View style={styles.card}>
+          <View style={styles.carditem}>
+            <View style={{ padding: 10 }} >
+              <View style={{ flexDirection: 'row' }}>
+                <Image
+                  source={{ uri: data[2] }}
+                  style={{ height: 110, width: 110, borderRadius: 20 }}
+                />
+                <Text style={styles.foodtext}>{data[1]}</Text>
+
+              </View>
+
 
             </View>
-
-
-          </View>
-          <View style={{ paddingLeft: 320, paddingBottom: 5 }} >
-            <Icon name='ios-arrow-dropright' style={{ fontSize: 20, color: 'grey' }} onPress={() => {
-              if (data[0] > 0) {
-                this.setState({
-                  store_dialog: true
-                });
-                this.get_position(data[0])
-              } else {
-                this.setState({
-                  recipe_dialog: true
-                });
-                this.get_position(data[0])
-              }
-            }} />
-            <Dialog.Container visible={this.state.store_dialog}>
-              <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.title}</Dialog.Title>
-              <View style={{ justifyContent: 'center' }}>
-                <View style={{ flexDirection: 'row' }}>
-                  <View style={{ justifyContent: 'center', marginBottom: 20 }} >
-                    <View style={{ padding: 15 }}>
-                      <Image
-                        source={{ uri: data[2] }}
-                        style={{ height: 130, width: 130 }}
-                      />
+            <View style={{ paddingLeft: 320, paddingBottom: 5 }} >
+              <Icon name='ios-arrow-dropright' style={{ fontSize: 20, color: 'grey' }} onPress={() => {
+                if (data[0] > 0) {
+                  this.setState({
+                    store_dialog: true
+                  });
+                  this.get_position(data[0])
+                } else {
+                  this.setState({
+                    recipe_dialog: true
+                  });
+                  this.get_position(data[0])
+                }
+              }} />
+              <Dialog.Container visible={this.state.store_dialog}>
+                <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.title}</Dialog.Title>
+                <View style={{ justifyContent: 'center' }}>
+                  <View style={{ flexDirection: 'row' }}>
+                    <View style={{ justifyContent: 'center', marginBottom: 20 }} >
+                      <View style={{ padding: 15 }}>
+                        <Image
+                          source={{ uri: data[2] }}
+                          style={{ height: 130, width: 130 }}
+                        />
+                      </View>
+                    </View>
+                    <View style={{ justifyContent: 'center', marginLeft: 10 }} >
+                      <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>{data[1]}</Text>
                     </View>
                   </View>
-                  <View style={{ justifyContent: 'center', marginLeft: 10 }} >
-                    <Text style={{ fontWeight: 'bold', marginBottom: 5 }}>{data[1]}</Text>
+                  <View style={{ justifyContent: 'center', marginBottom: 10 }}>
+                    <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>가게 위치</Text>
                   </View>
-                </View>
-                <View style={{ justifyContent: 'center', marginBottom: 10 }}>
-                  <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>가게 위치</Text>
-                </View>
-                <MapView
+                  <MapView
 
-                  initialRegion={{
-                    latitude: 35.89346514,
-                    longitude: 128.6220269,
-                    latitudeDelta: 0.0922,
-                    longitudeDelta: 0.0421,
-                  }}
-                  style={styles.mapStyle}>
-                  <Marker
-                    coordinate={{
-                      latitude: this.state.latitude_, longitude: this.state.longitude_
+                    initialRegion={{
+                      latitude: 35.89346514,
+                      longitude: 128.6220269,
+                      latitudeDelta: 0.0922,
+                      longitudeDelta: 0.0421,
                     }}
-                    title={this.state.title}
-                    description={this.state.address}
-                  />
+                    style={styles.mapStyle}>
+                    <Marker
+                      coordinate={{
+                        latitude: this.state.latitude_, longitude: this.state.longitude_
+                      }}
+                      title={this.state.title}
+                      description={this.state.address}
+                    />
 
-                </MapView>
-              </View>
-              <Button
-                title="취소"
-                titleStyle={{
-                  fontSize: 13,
-                  color: 'white',
-                  textAlign: 'center',
-                }}
-                onPress={this.handleDelete.bind(this)}
-                buttonStyle={{
-                  height: 30,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  borderRadius: 30,
-                  backgroundColor: '#1fa518'
-                }}
-                containerStyle={{ marginVertical: 7 }}
-              />
-            </Dialog.Container>
-
-            <Dialog.Container visible={this.state.recipe_dialog}>
-              <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.food}</Dialog.Title>
-              <View>
-
-                <View style={{ marginBottom: 20 }}>
-                  <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: '#1fa518', marginBottom: 5 }}>재료</Text>
-                  <View>
-                    <Text>
-                      {this.state.material}
-                    </Text>
-                  </View>
+                  </MapView>
                 </View>
-                <View style={{ justifyContent: 'center', marginBottom: 10 }}>
-                  <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: '#1fa518', marginBottom: 5 }}>만드는 방법</Text>
-                  <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                    <Text>
-                      {this.state.recipe}
-                    </Text>
-                  </View>
-                </View>
-              </View>
-              <View style={{ margin: 5 }}>
-                <Text style={{ fontSize: 10, color: "red", marginBottom: 3, marginLeft: 10 }}>*레시피대로 드셨다면 확인버튼을 눌러주세요</Text>
                 <Button
-                  title="확인"
+                  title="취소"
                   titleStyle={{
                     fontSize: 13,
                     color: 'white',
                     textAlign: 'center',
                   }}
-                  onPress={this.send_server.bind(this)}
+                  onPress={this.handleDelete.bind(this)}
                   buttonStyle={{
                     height: 30,
                     justifyContent: 'center',
                     alignItems: 'center',
                     borderRadius: 30,
-                    backgroundColor: '#1fa518'
+                    backgroundColor: '#ff9f0d'
+                  }}
+                  containerStyle={{ marginVertical: 7 }}
+                />
+              </Dialog.Container>
+
+              <Dialog.Container visible={this.state.recipe_dialog}>
+                <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.food}</Dialog.Title>
+                <View>
+
+                  <View style={{ marginBottom: 20 }}>
+                    <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>재료</Text>
+                    <View>
+                      <Text>
+                        {this.state.material}
+                      </Text>
+                    </View>
+                  </View>
+                  <View style={{ justifyContent: 'center', marginBottom: 10 }}>
+                    <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>만드는 방법</Text>
+                    <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                      <Text>
+                        {this.state.recipe}
+                      </Text>
+                    </View>
+                  </View>
+                </View>
+                <View style={{ margin: 5 }}>
+                  <Text style={{ fontSize: 10, color: "red", marginBottom: 3, marginLeft: 10 }}>*레시피대로 드셨다면 확인버튼을 눌러주세요</Text>
+                  <Button
+                    title="확인"
+                    titleStyle={{
+                      fontSize: 13,
+                      color: 'white',
+                      textAlign: 'center',
+                    }}
+                    onPress={this.send_server.bind(this)}
+                    buttonStyle={{
+                      height: 30,
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      borderRadius: 30,
+                      backgroundColor: '#ff9f0d'
+                    }}
+                    containerStyle={{ marginVertical: 3 }}
+                  />
+                </View>
+                <Button
+                  title="취소"
+                  titleStyle={{
+                    fontSize: 13,
+                    color: 'white',
+                    textAlign: 'center',
+                  }}
+                  onPress={this.handleDelete.bind(this)}
+                  buttonStyle={{
+                    height: 30,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    borderRadius: 30,
+                    backgroundColor: '#ff9f0d'
                   }}
                   containerStyle={{ marginVertical: 3 }}
                 />
-              </View>
-              <Button
-                title="취소"
-                titleStyle={{
-                  fontSize: 13,
-                  color: 'white',
-                  textAlign: 'center',
-                }}
-                onPress={this.handleDelete.bind(this)}
-                buttonStyle={{
-                  height: 30,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  borderRadius: 30,
-                  backgroundColor: '#1fa518'
-                }}
-                containerStyle={{ marginVertical: 3 }}
-              />
-            </Dialog.Container>
+              </Dialog.Container>
+            </View>
           </View>
-        </View>
-      </View >
+        </View >
+      </View>
 
     )
   }
