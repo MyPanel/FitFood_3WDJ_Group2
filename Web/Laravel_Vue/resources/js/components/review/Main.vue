@@ -1,5 +1,4 @@
 <template>
-<v-img src="/static/back_background.png">
   <!-- <div v-for="product in products" v-bind:key="product.id">
                 <div classs="row">
                     <div class="col-md-5 col-md-offset-0">
@@ -24,13 +23,22 @@
   <v-layout style="font-family : 'MapoPeacefull';" class="text-xs-center">
     <v-item-group tag="ul" class="event-card-list" name="fade-in" :css="false" appear>
       <li v-for="item in stores" v-bind:key="item.id">
-        <v-card justify-center class="event-card" style="border-top-left-radius: 2em; border-top-right-radius: 2em; width:1200px; height:175px; margin-bottom: 60px;">
+        <v-card
+          justify-center
+          class="event-card"
+          style="border-top-left-radius: 2em; border-top-right-radius: 2em; width:1200px; height:175px; margin-bottom: 60px;"
+        >
           <v-layout row>
-           
             <v-layout column justify-space-between style="padding: 0.8em 1.3em;">
               <div>
-                <h1 class="name"  style="font-family : 'MapoPeacefull'; margin-bottom: 20px; margin-left:10px;">{{item.store_name}}</h1>
-                <h3 class="address"  style="font-family : 'MapoPeacefull'; margin-bottom: 7px; margin-left:10px;">{{item.store_address}}</h3>
+                <h1
+                  class="name"
+                  style="font-family : 'MapoPeacefull'; margin-bottom: 20px; margin-left:10px;"
+                >{{item.store_name}}</h1>
+                <h3
+                  class="address"
+                  style="font-family : 'MapoPeacefull'; margin-bottom: 7px; margin-left:10px;"
+                >{{item.store_address}}</h3>
                 <!-- <div class="rating">
                                         <span v-bind:class="{'rating-active' :checkRating(n, product)}" v-for="n in 5" :key="n">☆</span>
                 </div>-->
@@ -55,7 +63,6 @@
       </li>
     </v-item-group>
   </v-layout>
-</v-img>
 </template>
 <script>
 import axios from "axios";
@@ -93,7 +100,7 @@ export default {
   },
   created: function() {
     axios
-      .get('/showStore')
+      .get("/showStore")
       .then(response => {
         console.log(response);
         this.stores = response.data;
@@ -107,7 +114,13 @@ export default {
 </script>
 
 <style>
-@font-face { font-family: 'MapoPeacefull'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face {
+  font-family: "MapoPeacefull";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .event-card-list {
   margin-top: 4em;
@@ -164,5 +177,4 @@ export default {
   font-size: 1.16em;
   padding-left: 0.1em;
 }
-
 </style>

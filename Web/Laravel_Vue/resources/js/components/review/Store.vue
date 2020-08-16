@@ -1,16 +1,18 @@
 <template>
-<v-img src="/static/back_background.png">
-  <v-container grid-list-md>
-    <v-layout justify-cetner row>
-      <v-flex xs12>
-        <!-- <h1>id {{$route.params.id}} 입니다</h1> -->
-        <h1 class="font-weight-black text-center" style="margin-top: 20px; margin-bottom: 20px; font-family : 'MapoPeacefull';">{{item.store_name}}</h1>
-        
-      </v-flex>
-      <router-view></router-view>
-    </v-layout>
-  </v-container>
-</v-img>
+  <v-img src="/static/back_background.png">
+    <v-container grid-list-md>
+      <v-layout justify-cetner row>
+        <v-flex xs12>
+          <!-- <h1>id {{$route.params.id}} 입니다</h1> -->
+          <h1
+            class="font-weight-black text-center"
+            style="margin-top: 20px; margin-bottom: 20px; font-family : 'MapoPeacefull';"
+          >{{item.store_name}}</h1>
+        </v-flex>
+        <router-view></router-view>
+      </v-layout>
+    </v-container>
+  </v-img>
 </template>
 
 <script>
@@ -52,7 +54,8 @@ export default {
     axios
       .get("/showStore")
       .then(res => {
-        this.item = res.data.filter(  // item변수 안에 select * from stores결괏값 적재
+        this.item = res.data.filter(
+          // item변수 안에 select * from stores결괏값 적재
           data => data.store_id == this.$route.params.id
         )[0];
         this.item.image = "/" + this.item.image;
@@ -71,7 +74,13 @@ export default {
 </script>
 
 <style>
-@font-face { font-family: 'MapoPeacefull'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face {
+  font-family: "MapoPeacefull";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoPeacefullA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 .img {
   /* width: 240px; */
