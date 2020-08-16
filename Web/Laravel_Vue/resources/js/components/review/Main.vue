@@ -145,12 +145,12 @@ export default {
 .event-card .address {
   font-size: 1.4em;
   font-weight: 400;
-  
+  color: #6d6d6d;
 }
 
 .event-card .location {
   font-size: 1em;
-  
+  color: #757575;
 }
 
 .event-card .location i {
