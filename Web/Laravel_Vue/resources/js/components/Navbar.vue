@@ -21,7 +21,7 @@
           height="17"
           style="margin-left : 50px;"
         />
-        <img v-else src="/static/web_logo2.png" id="top" height="17" />
+        <img v-else src="/static/web_logo2.png" id="top" height="17" style="margin-left : 50px;" />
       </router-link>
       <v-spacer></v-spacer>
       <v-toolbar-items>
