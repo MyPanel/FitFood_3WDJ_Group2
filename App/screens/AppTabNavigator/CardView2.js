@@ -48,7 +48,7 @@ export default class CardView2 extends React.Component {
     var updates = {};
     updates['/eaten/' + selected_day] = postData;
     var result = firebase.database().ref().update(updates);
-    alert('찜 등록 완료!!');
+    alert('いいね！');
     if (this.state.buttonColor == '#ff9f0d') {
       this.setState({ buttonColor: '#979797' }) // grey
     }
@@ -69,7 +69,7 @@ export default class CardView2 extends React.Component {
     this.setState({
       recipe_dialog: false
     })
-    alert('등록 완료');
+    alert('登録完了');
   }
 
   get_position(id) {
@@ -215,7 +215,7 @@ export default class CardView2 extends React.Component {
           <Dialog.Title style={{ textAlign: 'center', fontWeight: 'bold' }}>{this.state.food}</Dialog.Title>
           <View>
             <View style={{ marginBottom: 20 }}>
-              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>재료</Text>
+              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>材料</Text>
               <View>
                 <Text>
                   {this.state.material}
@@ -223,16 +223,16 @@ export default class CardView2 extends React.Component {
               </View>
             </View>
             <View style={{ marginBottom: 10 }}>
-              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>만드는 방법</Text>
+              <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 16, color: 'black', marginBottom: 5 }}>作り方</Text>
               <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                 {this.state.recipe.map((value, index) => <Text>{value}</Text>)}
               </View>
             </View>
           </View>
           <View style={{ margin: 5 }}>
-            <Text style={{ fontSize: 10, color: "red", marginBottom: 3, marginLeft: 10 }}>*레시피대로 드셨다면 확인버튼을 눌러주세요</Text>
+            <Text style={{ fontSize: 10, color: "red", marginBottom: 3, marginLeft: 10 }}>*レシピ通りに召し上がったらOKボタンを押してください。</Text>
             <Button
-              title="확인"
+              title="OK"
               titleStyle={{
                 fontSize: 13,
                 color: 'white',
@@ -250,7 +250,7 @@ export default class CardView2 extends React.Component {
             />
           </View>
           <Button
-            title="취소"
+            title="Cancel"
             titleStyle={{
               fontSize: 13,
               color: 'white',
@@ -286,7 +286,7 @@ export default class CardView2 extends React.Component {
               </View>
             </View>
             <View style={{ justifyContent: 'center', marginBottom: 10 }}>
-              <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>가게 위치</Text>
+              <Text style={{ textAlign: 'center', fontWeight: 'bold' }}>店の位置</Text>
             </View>
             <MapView
               initialRegion={{
@@ -306,7 +306,7 @@ export default class CardView2 extends React.Component {
             </MapView>
           </View>
           <Button
-            title="취소"
+            title="Cancel"
             titleStyle={{
               fontSize: 13,
               color: 'white',

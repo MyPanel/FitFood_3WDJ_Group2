@@ -69,7 +69,7 @@ class App extends React.Component {
                                     console.log('저장완료');
                                 })
                                 .catch((e) => console.log(e));
-                            alert('먹은음식이 ' + res + '맞나요?');
+                            alert('食べたものが' + res + 'ですか。');
                             this.props.navigation.navigate('HomeTab', { "food_name": res });
                         })
                         .catch((e) => console.log(e))

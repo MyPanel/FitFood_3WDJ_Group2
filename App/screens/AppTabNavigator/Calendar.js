@@ -282,28 +282,23 @@ class App extends React.Component {
                                 textStyle={{ color: 'grey' }}
                                 activeTabStyle={{ backgroundColor: 'white' }}
                                 activeTextStyle={{ color: '#ff9f0d' }}>
-                                <Container style={style.container}>
-                                    <Content>
-                                        {/* <View style={{ marginBottom: 10, marginTop: 15, flexDirection: 'row' }}>
+                                {/* <View style={{ marginBottom: 10, marginTop: 15, flexDirection: 'row' }}>
                                             <Icon name='ios-heart' style={{ fontsize: 21, color: 'orange', paddingLeft: 10, paddingRight: 5 }} ></Icon>
                                             <Text style={{ fontsize: '26', paddingTop: 5 }}>いいね献立を確認しましょう！</Text>
                                         </View> */}
-                                        <View style={styles.cardview}>
-                                            {this.state.count == 3
-                                                ? <View style={styles.view}><Text onPress={this.breakfast_get} style={styles.cardtext}>朝ご飯</Text><Plan data={[this.state.b_i, this.state.b_n, this.state.b_s]} /></View>
-                                                : null}
-                                            <View style={styles.view}>
-                                                <Text onPress={this.lunch_get} style={styles.cardtext}>昼食</Text>
-                                                <Plan data={[this.state.l_i, this.state.l_n, this.state.l_s]} />
-                                            </View>
-                                            <View style={styles.view}>
-                                                <Text onPress={this.dinner_get} style={styles.cardtext}>夕食</Text>
-                                                <Plan data={[this.state.d_i, this.state.d_n, this.state.d_s]} />
-                                            </View>
-
-                                        </View>
-                                    </Content>
-                                </Container>
+                                <View style={styles.cardview}>
+                                    {this.state.count == 3
+                                        ? <View style={styles.view}><Text onPress={this.breakfast_get} style={styles.cardtext}>朝ご飯</Text><Plan data={[this.state.b_i, this.state.b_n, this.state.b_s]} /></View>
+                                        : null}
+                                    <View style={styles.view}>
+                                        <Text onPress={this.lunch_get} style={styles.cardtext}>昼食</Text>
+                                        <Plan data={[this.state.l_i, this.state.l_n, this.state.l_s]} />
+                                    </View>
+                                    <View style={styles.view}>
+                                        <Text onPress={this.dinner_get} style={styles.cardtext}>夕食</Text>
+                                        <Plan data={[this.state.d_i, this.state.d_n, this.state.d_s]} />
+                                    </View>
+                                </View>
                             </Tab>
                         </Tabs>
                     </Content>
@@ -580,11 +575,10 @@ const styles = StyleSheet.create({
         paddingTop: 20
     },
     cardview: {
-        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         paddingTop: 10,
-        backgroundColor: '#f4f6fc',
+        backgroundColor: 'white',
         paddingRight: 20,
         paddingLeft: 20
     },
@@ -604,8 +598,8 @@ const styles = StyleSheet.create({
 
 const style = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#f4f6fc'
+        backgroundColor: '#f4f6fc',
+        marginTop: 80
     }
 });
 
