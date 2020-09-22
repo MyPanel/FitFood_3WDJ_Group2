@@ -43,7 +43,30 @@ class HomeTab extends React.Component {
 
     async componentDidMount() {
         const { navigation } = this.props;
+        var details = {
+            'source': 'ko',
+            'target': 'ja',
+            'text': '지난해'
+        };
+        var formBody = [];
+        for (var property in details) {
+        var encodedKey = encodeURIComponent(property);
+        var encodedValue = encodeURIComponent(details[property]);
+        formBody.push(encodedKey + "=" + encodedValue);
+        }
+        formBody = formBody.join("&");
 
+        fetch('https://openapi.naver.com/v1/papago/n2mt', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+                'X-Naver-Client-Id' : 'fU72GGu6QMaNtPxvCRTN',
+                'X-Naver-Client-Secret' : 'pGa_k9zFLG'
+            },
+            body: formBody
+        }).then(res=>res.json()).then(res => {
+            console.log(res.message.result.translatedText);
+        })
         navigation.addListener('didFocus', () => {
             this.setState({
                 nut: [[], [], [], [], [], []],
@@ -208,7 +231,7 @@ class HomeTab extends React.Component {
                         </View>
 
                         <View style={{ padding: 16, marginBottom: 60 }}>
-                            <Text style={{ color: "white", fontSize: 30, fontWeight: 'bold' }}>{"tester, \n当日の摂取栄養素を \n確認しましょう！"}</Text>
+                            <Text style={{ color: "white", fontSize: 30, fontWeight: 'bold' }}>{"tester, \n今日の摂取栄養素を \n確認しましょう！"}</Text>
                         </View>
                     </View>
                     <ScrollView style={{ backgroundColor: '#f4f6fc' }}>

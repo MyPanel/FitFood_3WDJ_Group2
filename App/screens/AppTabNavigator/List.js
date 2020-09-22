@@ -93,9 +93,6 @@ class List extends React.Component {
                 formData_.append('food_name', this.state.breakfast);
                 // 아침 추가
                 fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/app_eaten`, { method: 'POST', body: formData_ })
-                    .then((res) => res.text())
-                    .then(res => { console.log(res); })
-                    .catch((e) => console.log(e));
             }
 
             // kind 문자열
@@ -116,6 +113,7 @@ class List extends React.Component {
                 .then((res) => res.json())
                 .then(res => {
                     res.recommendMeals.map(value => {
+                        var text = '';
                         const array = [];
                         for (let index = 0; index < 2; index++) {
                             if (value[index].store_id == '-1') {

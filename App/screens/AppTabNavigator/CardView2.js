@@ -63,9 +63,7 @@ export default class CardView2 extends React.Component {
     formData.append('user_email', firebase.auth().currentUser.email);
     console.log(formData);
     fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/app_eaten`, { method: 'POST', body: formData })
-      .then(res => res.text()).then(res => {
-        console.log(res);
-      });
+
     this.setState({
       recipe_dialog: false
     })
@@ -112,7 +110,6 @@ export default class CardView2 extends React.Component {
   render() {
     const { data } = this.props;
 
-    console.log(data);
     return (
       <View style={{ marginLeft: 20, marginRight: 20 }}>
         {/* 아침 안 먹었을 경우 카드뷰 */}

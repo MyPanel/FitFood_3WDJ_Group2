@@ -277,7 +277,7 @@ class App extends React.Component {
                                     />
                                 </View>
                             </Tab>
-                            <Tab heading="今日の献立"
+                            <Tab heading="今日のメニュー"
                                 tabStyle={{ backgroundColor: 'white' }}
                                 textStyle={{ color: 'grey' }}
                                 activeTabStyle={{ backgroundColor: 'white' }}

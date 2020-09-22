@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView, Dimensions, TextInput, Platform, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import { Container, Header, Body, Right, Left, Icon } from 'native-base';
 import { Path } from 'react-native-svg'
-import { LineChart, XAxis, AreaChart, Grid, YAxis } from 'react-native-svg-charts'
+import { XAxis, AreaChart, Grid, YAxis } from 'react-native-svg-charts'
 import * as shape from 'd3-shape'
 import firebase from 'firebase';
-import MapView, { Marker } from 'react-native-maps';
-import { Button, Rating } from 'react-native-elements'
 
 class Like extends React.Component {
 
@@ -295,7 +293,7 @@ class Like extends React.Component {
                             paddingVertical: 20,
                             paddingHorizontal: 24
                         }}>
-                            <Text style={{ fontSize: 20, color: "black", marginTop: 15, marginBottom: 10, marginLeft: 10, fontWeight: "bold", textAlign: 'center' }}>2020/06/24 ~ 2020/06/30</Text>
+                            <Text style={{ fontSize: 20, color: "black", marginTop: 15, marginBottom: 10, marginLeft: 10, fontWeight: "bold", textAlign: 'center' }}>2020/09/16 ~ 2020/09/22</Text>
                             <Text style={{ fontSize: 12, color: "grey", marginBottom: 5, marginLeft: 10 }}>当日基準で1週間の3大栄養素推奨範囲超過、未満レポートをご確認ください</Text>
                             <Text style={{ fontSize: 10, color: "#1fa518", marginBottom: 15, marginLeft: 10 }}>*このデータはお勧め献立に反映されます</Text>
                         </View>

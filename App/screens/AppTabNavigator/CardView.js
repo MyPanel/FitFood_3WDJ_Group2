@@ -107,9 +107,6 @@ export default class CardView extends React.Component {
     formData.append('user_email', firebase.auth().currentUser.email);
     console.log(formData);
     fetch(`http://ec2-34-239-220-61.compute-1.amazonaws.com/app_eaten`, { method: 'POST', body: formData })
-      .then(res => res.text()).then(res => {
-        console.log(res);
-      });
     alert('登録完了');
     this.setState({
       recipe_dialog: false

@@ -7,6 +7,8 @@ const style = StyleSheet.create({
         color: 'white',
         fontSize: 18,
         textAlign: 'center'
+        // data: this.props.navigation.getParam('data'),
+        // uri: this.props.navigation.getParam('uri')
     },
     button: {
         marginTop: 20,
